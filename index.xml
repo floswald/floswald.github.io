@@ -100,6 +100,12 @@
 &lt;li&gt;Students should look at the &lt;a href=&#34;https://scpo-compecon.github.io/CoursePack/&#34; target=&#34;_blank&#34;&gt;CoursePack website&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;All material, including homeworks, are collected under our &lt;a href=&#34;https://github.com/ScPo-CompEcon&#34; target=&#34;_blank&#34;&gt;github org&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&#34;gpu-computing-tutorial&#34;&gt;GPU computing tutorial&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Here is a tutorial on &lt;a href=&#34;https://floswald.github.io/html/vfi.html&#34; target=&#34;_blank&#34;&gt;GPU computing with julia&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
