@@ -49,7 +49,11 @@
       <guid>https://floswald.github.io/research-assistants/</guid>
       <description>
 
-&lt;p&gt;I am always looking for motivated research assistants, and I was lucky to work with people who went on to other exciting opportunities after having worked for me (see below!). Here is the list of minimal requirements that you need to master in order to be able to work for me:&lt;/p&gt;
+&lt;p&gt;I am always looking for motivated research assistants, and I was lucky to work with people who went on to other exciting opportunities after having worked for me (see below!).&lt;/p&gt;
+
+&lt;h2 id=&#34;minimal-requirements&#34;&gt;Minimal Requirements&lt;/h2&gt;
+
+&lt;p&gt;Here is the list of minimal requirements that you need to master in order to be able to work for me:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Read &lt;a href=&#34;https://web.stanford.edu/%7Egentzkow/research/CodeAndData.pdf&#34; target=&#34;_blank&#34;&gt;The RA Philosphy&lt;/a&gt; by Gentzkow and Shapiro&lt;/li&gt;
@@ -77,13 +81,13 @@
 &lt;/ol&gt;&lt;/li&gt;
 &lt;li&gt;You need to know &lt;a href=&#34;https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;R data.table&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
-&lt;li&gt;Good &lt;code&gt;python&lt;/code&gt; skills is an asset but not a substitute for 2.&lt;/li&gt;
+&lt;li&gt;Good &lt;code&gt;python&lt;/code&gt; skills is an asset but not a substitute for 4.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;julia&lt;/code&gt; skills is an asset.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;ra-hall-of-fame&#34;&gt;RA Hall of Fame 🎉&lt;/h2&gt;
 
-&lt;p&gt;Here they are!  My current and previous research assistants in one place! I can only claim minimal influence in their successful careers 🤓.&lt;/p&gt;
+&lt;p&gt;Here they are! My current and previous research assistants in one place! I can only claim minimal influence in their successful careers 🤓.&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -98,22 +102,22 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://hugolhuillier.github.io&#34; target=&#34;_blank&#34;&gt;Hugo L&amp;rsquo;Huillier&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/project/fertility&#34;&gt;Fertility&lt;/a&gt;, &lt;code&gt;julia&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;Numerical solution of nonlinear model, Git, &lt;code&gt;Plots.jl&lt;/code&gt; graphics&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/project/fertility&#34;&gt;Fertility&lt;/a&gt; /  &lt;code&gt;julia, git&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Numerical solution of nonlinear model, &lt;code&gt;Plots.jl&lt;/code&gt; graphics&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;Princeton Econ PhD&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://vviers.github.io/&#34; target=&#34;_blank&#34;&gt;Vincent Viers&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/teaching/scpoeconometrics&#34;&gt;ScPoEconometrics&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/ZTRAX&#34;&gt;ZTRAX&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/Airbnb&#34;&gt;Airbnb&lt;/a&gt; &lt;code&gt;R, postgreSQL&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;advanced data wrangling with &lt;code&gt;data.table&lt;/code&gt;, &lt;code&gt;dplyr&lt;/code&gt;, spatial analytics with &lt;code&gt;sf&lt;/code&gt;. Bash scripting on remote machines. Git. Econometrics tutorials in &lt;code&gt;Rmd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/teaching/scpoeconometrics&#34;&gt;ScPoEconometrics&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/ZTRAX&#34;&gt;ZTRAX&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/Airbnb&#34;&gt;Airbnb&lt;/a&gt; / &lt;code&gt;R, postgreSQL, git&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;advanced data wrangling with &lt;code&gt;data.table&lt;/code&gt;, &lt;code&gt;dplyr&lt;/code&gt;, spatial analytics with &lt;code&gt;sf&lt;/code&gt;. Bash scripting on remote machines. Econometrics tutorials in &lt;code&gt;Rmd&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;LSE data science&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://fr.linkedin.com/in/jeanne-sorin-7a6248137&#34; target=&#34;_blank&#34;&gt;Jeanne Sorin&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/project/ZTRAX&#34;&gt;ZTRAX&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/ChicagoCrime&#34;&gt;Chicago&lt;/a&gt;, &lt;code&gt;R&lt;/code&gt;&lt;/td&gt;
-&lt;td align=&#34;center&#34;&gt;advanced data wrangling with &lt;code&gt;data.table&lt;/code&gt;, &lt;code&gt;dplyr&lt;/code&gt;, spatial analytics with &lt;code&gt;sf&lt;/code&gt;, FE estimation with &lt;code&gt;lfe&lt;/code&gt;. Work on google VM. Git.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://floswald.github.io/project/ZTRAX&#34;&gt;ZTRAX&lt;/a&gt;, &lt;a href=&#34;https://floswald.github.io/project/ChicagoCrime&#34;&gt;Chicago&lt;/a&gt; / &lt;code&gt;R, git&lt;/code&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;advanced data wrangling with &lt;code&gt;data.table&lt;/code&gt;, &lt;code&gt;dplyr&lt;/code&gt;, spatial analytics with &lt;code&gt;sf&lt;/code&gt;, FE estimation with &lt;code&gt;lfe&lt;/code&gt;. Work on google VM.&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;https://twitter.com/ScPoEcon&#34; target=&#34;_blank&#34;&gt;@ScPoEcon&lt;/a&gt;, starting PhD U Chicago&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
