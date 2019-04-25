@@ -23,6 +23,16 @@
     </item>
     
     <item>
+      <title>ZTRAX</title>
+      <link>https://floswald.github.io/project/ztrax/</link>
+      <pubDate>Thu, 25 Apr 2019 11:54:27 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/project/ztrax/</guid>
+      <description>This project works on the backend of the zillow.com database which was given to us under a permissive license. We work on a VM in the google cloud. We use the housing transaction data in several projects:
+ Chicago House Prices and Crime Fertility and Location Choices  </description>
+    </item>
+    
+    <item>
       <title>Airbnb vs Rents</title>
       <link>https://floswald.github.io/project/airbnb/</link>
       <pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate>
