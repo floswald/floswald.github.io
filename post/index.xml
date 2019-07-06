@@ -13,12 +13,13 @@
     
     
     <item>
-      <title>Test</title>
-      <link>https://floswald.github.io/post/test/</link>
-      <pubDate>Wed, 09 Jan 2019 13:30:19 +0100</pubDate>
+      <title>EM Benchmarks</title>
+      <link>https://floswald.github.io/post/em-benchmarks/</link>
+      <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
       
-      <guid>https://floswald.github.io/post/test/</guid>
-      <description>testing</description>
+      <guid>https://floswald.github.io/post/em-benchmarks/</guid>
+      <description>I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that
+ Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$ If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$.</description>
     </item>
     
   </channel>

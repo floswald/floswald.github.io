@@ -7,43 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
+    <lastBuildDate>Sat, 06 Jul 2019 09:56:47 +0200</lastBuildDate>
     
 	<atom:link href="https://floswald.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>R</title>
+      <link>https://floswald.github.io/tags/r/</link>
+      <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>computing</title>
       <link>https://floswald.github.io/tags/computing/</link>
-      <pubDate>Wed, 09 Jan 2019 12:58:45 +0100</pubDate>
+      <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
       
       <guid>https://floswald.github.io/tags/computing/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>data</title>
-      <link>https://floswald.github.io/tags/data/</link>
-      <pubDate>Thu, 25 Apr 2019 11:54:27 +0200</pubDate>
+      <title>julia</title>
+      <link>https://floswald.github.io/tags/julia/</link>
+      <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
       
-      <guid>https://floswald.github.io/tags/data/</guid>
+      <guid>https://floswald.github.io/tags/julia/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>discussion</title>
-      <link>https://floswald.github.io/tags/discussion/</link>
-      <pubDate>Mon, 07 Jan 2019 17:06:29 +0100</pubDate>
+      <title>research</title>
+      <link>https://floswald.github.io/tags/research/</link>
+      <pubDate>Thu, 25 Apr 2019 12:58:45 +0100</pubDate>
       
-      <guid>https://floswald.github.io/tags/discussion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>econ</title>
-      <link>https://floswald.github.io/tags/econ/</link>
-      <pubDate>Tue, 15 Jan 2019 10:57:27 +0100</pubDate>
-      
-      <guid>https://floswald.github.io/tags/econ/</guid>
+      <guid>https://floswald.github.io/tags/research/</guid>
       <description></description>
     </item>
     
@@ -57,20 +58,29 @@
     </item>
     
     <item>
-      <title>research</title>
-      <link>https://floswald.github.io/tags/research/</link>
-      <pubDate>Tue, 15 Jan 2019 10:57:27 +0100</pubDate>
+      <title>data</title>
+      <link>https://floswald.github.io/tags/data/</link>
+      <pubDate>Thu, 25 Apr 2019 11:54:27 +0200</pubDate>
       
-      <guid>https://floswald.github.io/tags/research/</guid>
+      <guid>https://floswald.github.io/tags/data/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>talks</title>
-      <link>https://floswald.github.io/tags/talks/</link>
-      <pubDate>Tue, 20 Nov 2018 17:00:00 +0100</pubDate>
+      <title>econ</title>
+      <link>https://floswald.github.io/tags/econ/</link>
+      <pubDate>Thu, 25 Apr 2019 11:54:27 +0200</pubDate>
       
-      <guid>https://floswald.github.io/tags/talks/</guid>
+      <guid>https://floswald.github.io/tags/econ/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wip</title>
+      <link>https://floswald.github.io/tags/wip/</link>
+      <pubDate>Tue, 15 Jan 2019 10:57:27 +0100</pubDate>
+      
+      <guid>https://floswald.github.io/tags/wip/</guid>
       <description></description>
     </item>
     
@@ -84,11 +94,20 @@
     </item>
     
     <item>
-      <title>wip</title>
-      <link>https://floswald.github.io/tags/wip/</link>
-      <pubDate>Tue, 15 Jan 2019 10:57:27 +0100</pubDate>
+      <title>discussion</title>
+      <link>https://floswald.github.io/tags/discussion/</link>
+      <pubDate>Mon, 07 Jan 2019 17:06:29 +0100</pubDate>
       
-      <guid>https://floswald.github.io/tags/wip/</guid>
+      <guid>https://floswald.github.io/tags/discussion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>talks</title>
+      <link>https://floswald.github.io/tags/talks/</link>
+      <pubDate>Tue, 20 Nov 2018 17:00:00 +0100</pubDate>
+      
+      <guid>https://floswald.github.io/tags/talks/</guid>
       <description></description>
     </item>
     

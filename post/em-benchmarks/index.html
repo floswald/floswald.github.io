@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 3.3.0">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="author" content="Florian Oswald">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that
+ Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$ If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://floswald.github.io/post/em-benchmarks/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#ff3e28">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  
+
+  <link rel="stylesheet" href="/styles.css">
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-41584331-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+  <link rel="alternate" href="https://floswald.github.io/index.xml" type="application/rss+xml" title="Florian Oswald">
+  <link rel="feed" href="https://floswald.github.io/index.xml" type="application/rss+xml" title="Florian Oswald">
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://floswald.github.io/post/em-benchmarks/">
+
+  
+  
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@FlorianOswald">
+  <meta property="twitter:creator" content="@FlorianOswald">
+  
+  <meta property="og:site_name" content="Florian Oswald">
+  <meta property="og:url" content="https://floswald.github.io/post/em-benchmarks/">
+  <meta property="og:title" content="EM Benchmarks | Florian Oswald">
+  <meta property="og:description" content="I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that
+ Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$ If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$."><meta property="og:image" content="https://floswald.github.io/img/florian.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-07-06T09:56:47&#43;02:00">
+  
+  <meta property="article:modified_time" content="2019-07-06T09:56:47&#43;02:00">
+  
+
+  
+
+  
+
+  <title>EM Benchmarks | Florian Oswald</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Florian Oswald</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            
+            <span>Research</span>
+            
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/#publications">
+                
+                <span>Publications</span>
+                
+              </a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/#publications_selected">
+                
+                <span>Working Papers</span>
+                
+              </a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/#projects">
+                
+                <span>Projects</span>
+                
+              </a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/#teaching">
+            
+            <span>Teaching</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+            
+            <span>Miscellaneous</span>
+            
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/computing">
+                
+                <span>Computing</span>
+                
+              </a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/research-assistants">
+                
+                <span>Research Assistants</span>
+                
+              </a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/#talks">
+                
+                <span>Talks</span>
+                
+              </a>
+            </li>
+            
+            <li class="dropdown-item my-0 py-0 mx-0 px-0">
+              <a href="/#posts">
+                
+                <span>Blog</span>
+                
+              </a>
+            </li>
+            
+          </ul>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="/tex/floswald.pdf">
+            
+            <span>CV</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1 itemprop="name">EM Benchmarks</h1>
+
+  
+
+  
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Florian Oswald">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2019-07-06 09:56:47 &#43;0200 CEST" itemprop="datePublished">
+    <time datetime="2019-07-06 09:56:47 &#43;0200 CEST" itemprop="dateModified">
+      Jul 6, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Florian Oswald">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/em-benchmarks/#disqus_thread"></a>
+  
+
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=EM%20Benchmarks&amp;url=https%3a%2f%2ffloswald.github.io%2fpost%2fem-benchmarks%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2ffloswald.github.io%2fpost%2fem-benchmarks%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffloswald.github.io%2fpost%2fem-benchmarks%2f&amp;title=EM%20Benchmarks"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2ffloswald.github.io%2fpost%2fem-benchmarks%2f&amp;title=EM%20Benchmarks"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=EM%20Benchmarks&amp;body=https%3a%2f%2ffloswald.github.io%2fpost%2fem-benchmarks%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<p>I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that</p>
+
+<ol>
+<li>Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$</li>
+<li>If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$.</li>
+</ol>
+
+<p>This kind of model is at the current frontier of econometrics, and a recent paper is <a href="https://www.econometricsociety.org/publications/econometrica/2019/05/01/distributional-framework-matched-employer-employee-data" target="_blank">Bonhomme, Lamadon and Manresa (Econometrica 2019)</a>, ungated <a href="http://www.lamadon.com/paper/blm.pdf" target="_blank">here</a>, with a great <a href="https://github.com/tlamadon/blm-replicate" target="_blank">replication package in <code>R</code></a>.</p>
+
+<p>The estimation of such models often involves using the <a href="https://en.wikipedia.org/wiki/Expectation–maximization_algorithm" target="_blank">EM-Algorithm</a>, which I won&rsquo;t describe in detail here.</p>
+
+<h2 id="weapon-of-choice">Weapon of Choice?</h2>
+
+<p>Now before getting to the full model above, I wanted to know my options in terms of programming language. I decided to benchmark a simple version of the above problem: there is only one firm type (<em>all workers at the same firm</em>), and there are only two worker types, $K=2$. I am considering two options in terms of language: <code>R</code> and <code>julia</code>.</p>
+
+<p>I&rsquo;ll do a hand-coded version in each language, as well as use a package from each:</p>
+
+<ul>
+<li>Hand-coding is relevant because my final problem will need some modification of existing algorithms.</li>
+<li>Packages are relevant because they often provide efficient implementations, and could be the building block on which my extension is based.</li>
+</ul>
+
+<p>Here goes!</p>
+
+<h3 id="benchmark-setup">Benchmark Setup</h3>
+
+<p>I will benchmark everything out of a <code>julia</code> session by relying on the <a href="https://github.com/JuliaInterop/RCall.jl" target="_blank"><code>RCall.jl</code></a> package (<a href="https://github.com/floswald/EMbench.jl" target="_blank">benchmark code on this repo</a>). <code>RCall.jl</code> launches an <code>R</code> session from within <code>julia</code> and allows to go back and forth with surprisingly little overhead (accesses the same locations in RAM, so no data is copied). The advantage of this is that I can create the exact same benchmarking data to test in both languages. So all code you see here is valid <code>julia</code>, even though sometimes it contains some <code>R</code>. Cool, right?🕺</p>
+
+<p>Here is the data creator:</p>
+
+<pre><code class="language-julia">function sdata(k,n; doplot = false)
+    Random.seed!(3333)
+    # true values
+    μ = [2.0,5.0]
+    σ = [0.5,0.7]
+    α = [0.3,0.7]
+
+    m = MixtureModel([Normal(μ[i], σ[i]) for i in 1:2], α)
+    if doplot
+        plot(
+            plot(m,linewidth=2), 
+            plot(m,linewidth=2, fill=(0,:red,0.5), components = false, title=&quot;Mixture&quot;),dpi = 300
+            )
+        savefig(&quot;mixtures.png&quot;)
+    end
+    y = rand(m,n)
+
+    return Dict(:y =&gt; y, :μ =&gt; μ, :σ =&gt; σ, :α =&gt; α)
+end
+</code></pre>
+
+<ul>
+<li>sets true mixture parameters</li>
+<li>creates a <code>Distributions.MixtureModel</code> data type</li>
+<li>optionally makes a plot from it</li>
+<li>draws <code>n</code> random realizations from it</li>
+</ul>
+
+<p>The setup looks like this:</p>
+
+<p><img src="/img/EM-mixtures.png" alt="benchmark data" /></p>
+
+<p>All benchmarks will now proceed in the same way:</p>
+
+<ol>
+<li>Take vector <code>y</code></li>
+<li>set (the same) wrong starting values</li>
+<li>run the EM algorithm for <code>iters</code> iterations to find true values of proportion weights $\alpha$, means $\mu$ and variances $\sigma$ for each component.</li>
+<li>Notice that the starting values are such that the algorithm never fully recovers the true values. Given it&rsquo;s the same data, however, each implementation will follow the same path for parameter values and run the same number of iterations (again, none until convergence).</li>
+</ol>
+
+<h3 id="julia-by-hand"><code>julia</code> by hand</h3>
+
+<p>Here is my relatively naive and <em>just-copy-thy-math</em> implemenation in <code>julia</code>:</p>
+
+<pre><code class="language-julia">function bm_jl(y::Vector{Float64};iters=100)
+
+    # poor starting values
+    μ = [4.0,6.0]
+    σ = [1.0,1.0]
+    α = [0.5,0.5]
+
+    N = length(y)
+    K = length(μ)
+
+    # initialize objects    
+    L = zeros(N,K)
+    p = similar(L)
+
+    for it in 1:iters
+
+        dists = [Normal(μ[ik], σ[ik] ) for ik in 1:K]
+
+        # evaluate likelihood for each type 
+        for i in 1:N
+            for k in 1:K
+                # Distributions.jl logpdf()
+                L[i,k] = log(α[k]) + logpdf.(dists[k], y[i]) 
+            end
+        end
+
+        # get posterior of each type 
+        p[:,:] = exp.(L .- logsumexp(L))
+      
+        # with p in hand, update 
+        α[:] .= vec(sum(p,dims=1) ./ N)
+        μ[:] .= vec(sum(p .* y, dims = 1) ./ sum(p, dims = 1))
+        σ[:] .= vec(sqrt.(sum(p .* (y .- μ').^2, dims = 1) ./ sum(p, dims = 1)))
+    end
+    return Dict(:α =&gt; α, :μ =&gt; μ, :σ =&gt; σ)
+end
+</code></pre>
+
+<h3 id="gaussianmixtures-jl-https-github-com-davidavdav-gaussianmixtures-jl"><a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank"><code>GaussianMixtures.jl</code></a></h3>
+
+<p>Next is a julia package written for this purpose. Here is the relevant part:</p>
+
+<pre><code class="language-julia">function bm_jl_GMM(y::Vector{Float64};iters=100)
+    gmm = GMM(2,1)  # initialize an empty GMM object
+    # stick in our starting values
+    gmm.μ[:,1] .= [4.0;6.0]
+    gmm.Σ[:,1] .= [1.0;1.0]
+    gmm.w[:,1] .= [0.5;0.5]
+
+    # run em!
+    em!(gmm,y[:,:],nIter = iters)
+    return gmm
+end
+</code></pre>
+
+<h3 id="r-not-so-naive-by-hand"><code>R</code> not-so-naive by hand</h3>
+
+<ul>
+<li>I tried to vectorize as much as possible here</li>
+<li>Self-imposed rules: no <code>Rcpp</code></li>
+<li>You can see this uses an <code>R</code>-string, where data values are interpolated with a <code>$</code> into the <code>R</code> session.</li>
+</ul>
+
+<pre><code class="language-julia"># this is a julia function!
+function bm_R(y;iters=100)
+    
+    # that defines an R-string, sent off to R.
+    r_result = R&quot;&quot;&quot;
+
+    library(tictoc)
+
+    # define a `repeat` function
+    spread &lt;- function (A, loc, dims) {
+        if (!(is.array(A))) {
+            A = array(A, dim = c(length(A)))
+        }
+        adims = dim(A)
+        l = length(loc)
+        if (max(loc) &gt; length(dim(A)) + l) {
+            stop(&quot;incorrect dimensions in spread&quot;)
+        }
+        sdim = c(dim(A), dims)
+        edim = c()
+        oi = 1
+        ni = length(dim(A)) + 1
+        for (i in c(1:(length(dim(A)) + l))) {
+            if (i %in% loc) {
+                edim = c(edim, ni)
+                ni = ni + 1
+            }
+            else {
+                edim = c(edim, oi)
+                oi = oi + 1
+            }
+        }
+        return(aperm(array(A, dim = sdim), edim))
+    }
+
+    # define row-wise logsumexp
+    logRowSumExp &lt;- function(M) {
+        if (is.null(dim(M))) {return(M)}
+        vms = apply(M,1,max)
+        log(rowSums(exp(M-spread(vms,2,dim(M)[2])))) + vms
+    }
+
+    # define the function to be timed in R
+    simpleEM &lt;- function(y,iters){
+    
+        K = 2
+        N = length($y)
+        
+        EMfun &lt;- function(mu,sigma,alpha,iters){
+            # allocate arrays
+            p = array(0,c(N,K))
+            L = array(0,c(N,K))
+            
+            for (it in 1:iters){
+                # E step
+                
+                # vectorized over N loop
+                for (k in 1:K){
+                    L[ ,k] = log(alpha[k]) + dnorm(y,mean = mu[k], sd = sigma[k], log = TRUE)
+                }
+                p = exp(L - logRowSumExp(L))
+                
+                # M step
+                alpha = colMeans(p)
+                mu = colSums(p * y) / colSums(p)
+                sigma = sqrt( colSums( p * (y - spread(mu,1,N))^2 ) / colSums(p) )
+            }
+            o =list(alpha=alpha,mu=mu,sigma=sigma)
+            return(o)
+        }
+        
+        # starting values
+        mu_    = c(4.0,6.0)
+        sigma_ = c(1.0,1.0)
+        alpha_ = c(0.5,0.5)
+
+        # take time
+        tic()
+        out = EMfun(mu_,sigma_,alpha_,iters)
+        tt = toc()
+        return(list(result = out, time = tt$toc - tt$tic))
+    }
+    simpleEM($y,$iters)   # run function in R!
+    &quot;&quot;&quot;
+    return r_result
+end
+</code></pre>
+
+<h3 id="r-mixtools-package"><code>R mixtools</code> package</h3>
+
+<p>The <a href="https://cran.r-project.org/web/packages/mixtools/index.html" target="_blank"><code>mixtools</code></a> package is a very mature and highly optimized package for EM estimation. Most of the computationally intensive parts are written in <code>C</code><sup class="footnote-ref" id="fnref:For-example-in-t"><a href="#fn:For-example-in-t">1</a></sup>. My call:</p>
+
+<pre><code class="language-julia">function bm_R_mixtools(y::Vector{Float64};iters=100)
+    
+    r_result = R&quot;&quot;&quot;
+
+    library(tictoc)
+    library(mixtools)
+
+    mu    = c(4.0,6.0)
+    sigma = c(1.0,1.0)
+    alpha = c(0.5,0.5)
+
+    y = $y
+    N = length(y)
+    K = 2
+    iters = $iters
+    
+    tic()
+    result = normalmixEM(y,k = K,lambda = alpha, mu = mu, sigma = sigma, maxit = iters)
+    tt = toc()
+    list(result = result, time = tt$toc - tt$tic)
+
+    &quot;&quot;&quot;
+    return r_result
+end
+</code></pre>
+
+<h2 id="results">Results!</h2>
+
+<ul>
+<li>I use the <a href="https://github.com/JuliaCI/BenchmarkTools.jl" target="_blank"><code>BenchmarkTools.jl</code></a> package to benchmark the julia functions. This runs the functions multiple times to account for system noise. (running multiple times also gets rid of any JIT-related delays in julia)</li>
+<li>The <code>R</code> functions are timed <em>within</em> the R process using the <code>tictoc</code> package, so even if there were any significant overhead from <code>RCall.jl</code>, the measurement is immune to that.</li>
+</ul>
+
+<p>Here is the output table, with <code>n</code> for sample size, and times in seconds:</p>
+
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>jl</th>
+<th>jlg</th>
+<th>R</th>
+<th>Rmix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>10000</td>
+<td>0.0388268</td>
+<td>0.0179957</td>
+<td>0.457</td>
+<td>0.073</td>
+</tr>
+
+<tr>
+<td>100000</td>
+<td>0.366047</td>
+<td>0.16506</td>
+<td>5.068</td>
+<td>0.889</td>
+</tr>
+
+<tr>
+<td>1000000</td>
+<td>3.99279</td>
+<td>1.75384</td>
+<td>47.522</td>
+<td>8.344</td>
+</tr>
+
+<tr>
+<td>10000000</td>
+<td>46.833</td>
+<td>31.4021</td>
+<td>553.783</td>
+<td>65.379</td>
+</tr>
+</tbody>
+</table>
+
+<p>And a much clearer picture using log scales:</p>
+
+<p><img src="/img/EM-bench.png" alt="results" /></p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<ol>
+<li>The naively hand-written code in <code>julia</code> performs very well.</li>
+<li>The <a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank"><code>GaussianMixtures.jl</code></a> performs best throughout</li>
+<li>Both julia implementations outperform the <code>C</code>-optimized
+<a href="https://cran.r-project.org/web/packages/mixtools/index.html" target="_blank"><code>R mixtools</code></a> package.</li>
+<li>The vectorized <code>R</code> version comes in slowest.</li>
+</ol>
+
+<p>I take from this that focusing on extending the work in <a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank"><code>GaussianMixtures.jl</code></a> for my purposes is the most promising avenue here.</p>
+
+<h2 id="code-and-versions">Code and Versions</h2>
+
+<p>Code is on <a href="https://github.com/floswald/EMbench.jl" target="_blank">github</a> with full package version manifest.</p>
+
+<pre><code class="language-julia">julia&gt; versioninfo()
+Julia Version 1.1.0
+Commit 80516ca202 (2019-01-21 21:24 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin14.5.0)
+  CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-6.0.1 (ORCJIT, broadwell)
+
+shell&gt; R --version
+R version 3.5.1 (2018-07-02) -- &quot;Feather Spray&quot;
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+http://www.gnu.org/licenses/.
+</code></pre>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:For-example-in-t">For example, in the package source, look for <code>src/normpost.c</code> which evaluates the matrix of posterior probabilities, object <code>p</code> in the julia code above.  <a class="footnote-return" href="#fnref:For-example-in-t"><sup>^</sup></a></li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/r/">R</a>
+  
+  <a class="badge badge-light" href="/tags/julia/">julia</a>
+  
+  <a class="badge badge-light" href="/tags/computing/">computing</a>
+  
+</div>
+
+
+
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/florian.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Florian Oswald</a></h5>
+    <h6 class="card-subtitle">Assistant Professor of Economics</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:florian.oswald@sciencespo.fr" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/FlorianOswald" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.fr/citations?user=40Tdn0sAAAAJ" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/floswald" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+    
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/computing/">Computing</a></li>
+        
+      </ul>
+    </div>
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "@florianoswald" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    &copy; 2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/julia.min.js"></script>
+        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/R.min.js"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//@florianoswald.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "results found",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.70f0041f5a24c6a675ac218c98d7ef71.js"></script>
+
+    
+
+  </body>
+</html>
+

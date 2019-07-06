@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     
@@ -6,6 +5,77 @@
     
       <loc>https://floswald.github.io/project/hedonic/</loc>
       <lastmod>2019-01-15T10:57:27+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/post/em-benchmarks/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/r/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/computing/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/julia/</loc>
+      <lastmod>2019-07-06T09:56:47+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/publication_types/2/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/publication_types/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -20,8 +90,35 @@
     
     <url>
     
+      <loc>https://floswald.github.io/categories/</loc>
+      <lastmod>2019-04-25T12:58:45+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://floswald.github.io/research-assistants/</loc>
       <lastmod>2019-04-25T12:58:45+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/categories/research/</loc>
+      <lastmod>2019-04-25T12:58:45+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/research/</loc>
+      <lastmod>2019-04-25T12:58:45+01:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -36,8 +133,53 @@
     
     <url>
     
+      <loc>https://floswald.github.io/project/</loc>
+      <lastmod>2019-04-25T11:56:04+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/housing/</loc>
+      <lastmod>2019-04-25T11:56:04+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://floswald.github.io/project/ztrax/</loc>
       <lastmod>2019-04-25T11:54:27+02:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/data/</loc>
+      <lastmod>2019-04-25T11:54:27+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/econ/</loc>
+      <lastmod>2019-04-25T11:54:27+02:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/wip/</loc>
+      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -68,16 +210,26 @@
     
     <url>
     
-      <loc>https://floswald.github.io/teaching/scpoeconometrics/</loc>
-      <lastmod>2019-01-09T14:42:18+01:00</lastmod>
+      <loc>https://floswald.github.io/teaching/</loc>
+      <lastmod>2019-01-12T11:48:47+01:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
     
     <url>
     
-      <loc>https://floswald.github.io/post/test/</loc>
-      <lastmod>2019-01-09T13:30:19+01:00</lastmod>
+      <loc>https://floswald.github.io/tags/teaching/</loc>
+      <lastmod>2019-01-12T11:48:47+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/teaching/scpoeconometrics/</loc>
+      <lastmod>2019-01-09T14:42:18+01:00</lastmod>
     </url>
     
   
@@ -100,6 +252,33 @@
     
     <url>
     
+      <loc>https://floswald.github.io/tags/discussion/</loc>
+      <lastmod>2019-01-07T17:06:29+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/categories/econ/</loc>
+      <lastmod>2019-01-07T17:06:29+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/publication_types/3/</loc>
+      <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://floswald.github.io/publication/bankruptcy-2019/</loc>
       <lastmod>2019-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -110,6 +289,24 @@
     
       <loc>https://floswald.github.io/talk/cluster/</loc>
       <lastmod>2018-11-20T17:00:00+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/categories/computing/</loc>
+      <lastmod>2018-11-20T17:00:00+01:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/talks/</loc>
+      <lastmod>2018-11-20T17:00:00+01:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -174,184 +371,6 @@
     
       <loc>https://floswald.github.io/publication/larsen-2012-test/</loc>
       <lastmod>2012-01-01T00:00:00+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/publication_types/2/</loc>
-      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/publication_types/3/</loc>
-      <lastmod>2019-01-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/</loc>
-      <lastmod>2017-10-15T00:00:00+02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/project/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/publication_types/</loc>
-      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/teaching/</loc>
-      <lastmod>2019-01-12T11:48:47+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/computing/</loc>
-      <lastmod>2019-01-09T12:58:45+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/categories/computing/</loc>
-      <lastmod>2018-11-20T17:00:00+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/data/</loc>
-      <lastmod>2019-04-25T11:54:27+02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/discussion/</loc>
-      <lastmod>2019-01-07T17:06:29+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/econ/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/categories/econ/</loc>
-      <lastmod>2019-01-07T17:06:29+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/housing/</loc>
-      <lastmod>2019-04-25T11:56:04+02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/research/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/categories/research/</loc>
-      <lastmod>2019-04-25T12:58:45+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/talks/</loc>
-      <lastmod>2018-11-20T17:00:00+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/teaching/</loc>
-      <lastmod>2019-01-12T11:48:47+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
-      <loc>https://floswald.github.io/tags/wip/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-      <priority>0</priority>
     </url>
     
   

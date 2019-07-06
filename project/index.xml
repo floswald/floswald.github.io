@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Tue, 15 Jan 2019 10:57:27 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 11:56:04 +0200</lastBuildDate>
     
 	<atom:link href="https://floswald.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,7 +28,7 @@
       <pubDate>Thu, 25 Apr 2019 11:56:04 +0200</pubDate>
       
       <guid>https://floswald.github.io/project/chicagocrime/</guid>
-      <description>In this research project we would like to contribute to a small and growing literature after Thaler (1978) that tries to establish a causal relationship between local crime and local house prices. The central aim of this literature is to this day the measurement of the willingness to pay of residents for crime reduction. In a wider sense, how much should a country spend on its criminal justice system, how much to spend on police forces?</description>
+      <description>Impact of Crime on Prices</description>
     </item>
     
     <item>
@@ -37,8 +37,7 @@
       <pubDate>Thu, 25 Apr 2019 11:54:27 +0200</pubDate>
       
       <guid>https://floswald.github.io/project/ztrax/</guid>
-      <description>This project works on the backend of the zillow.com database which was given to us under a permissive license. We work on a VM in the google cloud. We use the housing transaction data in several projects:
- Chicago House Prices and Crime Fertility and Location Choices  </description>
+      <description>30 years of US Housing Transaction Data</description>
     </item>
     
     <item>

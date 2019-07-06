@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Florian Oswald on Florian Oswald</title>
@@ -7,7 +6,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Sun, 15 Oct 2017 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 09:56:47 +0200</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -38,6 +37,377 @@
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Data.&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Draft.&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EM Benchmarks</title>
+      <link>https://floswald.github.io/post/em-benchmarks/</link>
+      <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/post/em-benchmarks/</guid>
+      <description>
+
+&lt;p&gt;I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$&lt;/li&gt;
+&lt;li&gt;If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This kind of model is at the current frontier of econometrics, and a recent paper is &lt;a href=&#34;https://www.econometricsociety.org/publications/econometrica/2019/05/01/distributional-framework-matched-employer-employee-data&#34; target=&#34;_blank&#34;&gt;Bonhomme, Lamadon and Manresa (Econometrica 2019)&lt;/a&gt;, ungated &lt;a href=&#34;http://www.lamadon.com/paper/blm.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, with a great &lt;a href=&#34;https://github.com/tlamadon/blm-replicate&#34; target=&#34;_blank&#34;&gt;replication package in &lt;code&gt;R&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The estimation of such models often involves using the &lt;a href=&#34;https://en.wikipedia.org/wiki/Expectation–maximization_algorithm&#34; target=&#34;_blank&#34;&gt;EM-Algorithm&lt;/a&gt;, which I won&amp;rsquo;t describe in detail here.&lt;/p&gt;
+
+&lt;h2 id=&#34;weapon-of-choice&#34;&gt;Weapon of Choice?&lt;/h2&gt;
+
+&lt;p&gt;Now before getting to the full model above, I wanted to know my options in terms of programming language. I decided to benchmark a simple version of the above problem: there is only one firm type (&lt;em&gt;all workers at the same firm&lt;/em&gt;), and there are only two worker types, $K=2$. I am considering two options in terms of language: &lt;code&gt;R&lt;/code&gt; and &lt;code&gt;julia&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll do a hand-coded version in each language, as well as use a package from each:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hand-coding is relevant because my final problem will need some modification of existing algorithms.&lt;/li&gt;
+&lt;li&gt;Packages are relevant because they often provide efficient implementations, and could be the building block on which my extension is based.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here goes!&lt;/p&gt;
+
+&lt;h3 id=&#34;benchmark-setup&#34;&gt;Benchmark Setup&lt;/h3&gt;
+
+&lt;p&gt;I will benchmark everything out of a &lt;code&gt;julia&lt;/code&gt; session by relying on the &lt;a href=&#34;https://github.com/JuliaInterop/RCall.jl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;RCall.jl&lt;/code&gt;&lt;/a&gt; package (&lt;a href=&#34;https://github.com/floswald/EMbench.jl&#34; target=&#34;_blank&#34;&gt;benchmark code on this repo&lt;/a&gt;). &lt;code&gt;RCall.jl&lt;/code&gt; launches an &lt;code&gt;R&lt;/code&gt; session from within &lt;code&gt;julia&lt;/code&gt; and allows to go back and forth with surprisingly little overhead (accesses the same locations in RAM, so no data is copied). The advantage of this is that I can create the exact same benchmarking data to test in both languages. So all code you see here is valid &lt;code&gt;julia&lt;/code&gt;, even though sometimes it contains some &lt;code&gt;R&lt;/code&gt;. Cool, right?🕺&lt;/p&gt;
+
+&lt;p&gt;Here is the data creator:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;function sdata(k,n; doplot = false)
+    Random.seed!(3333)
+    # true values
+    μ = [2.0,5.0]
+    σ = [0.5,0.7]
+    α = [0.3,0.7]
+
+    m = MixtureModel([Normal(μ[i], σ[i]) for i in 1:2], α)
+    if doplot
+        plot(
+            plot(m,linewidth=2), 
+            plot(m,linewidth=2, fill=(0,:red,0.5), components = false, title=&amp;quot;Mixture&amp;quot;),dpi = 300
+            )
+        savefig(&amp;quot;mixtures.png&amp;quot;)
+    end
+    y = rand(m,n)
+
+    return Dict(:y =&amp;gt; y, :μ =&amp;gt; μ, :σ =&amp;gt; σ, :α =&amp;gt; α)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sets true mixture parameters&lt;/li&gt;
+&lt;li&gt;creates a &lt;code&gt;Distributions.MixtureModel&lt;/code&gt; data type&lt;/li&gt;
+&lt;li&gt;optionally makes a plot from it&lt;/li&gt;
+&lt;li&gt;draws &lt;code&gt;n&lt;/code&gt; random realizations from it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The setup looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://floswald.github.io/img/EM-mixtures.png&#34; alt=&#34;benchmark data&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All benchmarks will now proceed in the same way:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Take vector &lt;code&gt;y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;set (the same) wrong starting values&lt;/li&gt;
+&lt;li&gt;run the EM algorithm for &lt;code&gt;iters&lt;/code&gt; iterations to find true values of proportion weights $\alpha$, means $\mu$ and variances $\sigma$ for each component.&lt;/li&gt;
+&lt;li&gt;Notice that the starting values are such that the algorithm never fully recovers the true values. Given it&amp;rsquo;s the same data, however, each implementation will follow the same path for parameter values and run the same number of iterations (again, none until convergence).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;julia-by-hand&#34;&gt;&lt;code&gt;julia&lt;/code&gt; by hand&lt;/h3&gt;
+
+&lt;p&gt;Here is my relatively naive and &lt;em&gt;just-copy-thy-math&lt;/em&gt; implemenation in &lt;code&gt;julia&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;function bm_jl(y::Vector{Float64};iters=100)
+
+    # poor starting values
+    μ = [4.0,6.0]
+    σ = [1.0,1.0]
+    α = [0.5,0.5]
+
+    N = length(y)
+    K = length(μ)
+
+    # initialize objects    
+    L = zeros(N,K)
+    p = similar(L)
+
+    for it in 1:iters
+
+        dists = [Normal(μ[ik], σ[ik] ) for ik in 1:K]
+
+        # evaluate likelihood for each type 
+        for i in 1:N
+            for k in 1:K
+                # Distributions.jl logpdf()
+                L[i,k] = log(α[k]) + logpdf.(dists[k], y[i]) 
+            end
+        end
+
+        # get posterior of each type 
+        p[:,:] = exp.(L .- logsumexp(L))
+      
+        # with p in hand, update 
+        α[:] .= vec(sum(p,dims=1) ./ N)
+        μ[:] .= vec(sum(p .* y, dims = 1) ./ sum(p, dims = 1))
+        σ[:] .= vec(sqrt.(sum(p .* (y .- μ&#39;).^2, dims = 1) ./ sum(p, dims = 1)))
+    end
+    return Dict(:α =&amp;gt; α, :μ =&amp;gt; μ, :σ =&amp;gt; σ)
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;gaussianmixtures-jl-https-github-com-davidavdav-gaussianmixtures-jl&#34;&gt;&lt;a href=&#34;https://github.com/davidavdav/GaussianMixtures.jl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;GaussianMixtures.jl&lt;/code&gt;&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Next is a julia package written for this purpose. Here is the relevant part:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;function bm_jl_GMM(y::Vector{Float64};iters=100)
+    gmm = GMM(2,1)  # initialize an empty GMM object
+    # stick in our starting values
+    gmm.μ[:,1] .= [4.0;6.0]
+    gmm.Σ[:,1] .= [1.0;1.0]
+    gmm.w[:,1] .= [0.5;0.5]
+
+    # run em!
+    em!(gmm,y[:,:],nIter = iters)
+    return gmm
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;r-not-so-naive-by-hand&#34;&gt;&lt;code&gt;R&lt;/code&gt; not-so-naive by hand&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I tried to vectorize as much as possible here&lt;/li&gt;
+&lt;li&gt;Self-imposed rules: no &lt;code&gt;Rcpp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;You can see this uses an &lt;code&gt;R&lt;/code&gt;-string, where data values are interpolated with a &lt;code&gt;$&lt;/code&gt; into the &lt;code&gt;R&lt;/code&gt; session.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;# this is a julia function!
+function bm_R(y;iters=100)
+    
+    # that defines an R-string, sent off to R.
+    r_result = R&amp;quot;&amp;quot;&amp;quot;
+
+    library(tictoc)
+
+    # define a `repeat` function
+    spread &amp;lt;- function (A, loc, dims) {
+        if (!(is.array(A))) {
+            A = array(A, dim = c(length(A)))
+        }
+        adims = dim(A)
+        l = length(loc)
+        if (max(loc) &amp;gt; length(dim(A)) + l) {
+            stop(&amp;quot;incorrect dimensions in spread&amp;quot;)
+        }
+        sdim = c(dim(A), dims)
+        edim = c()
+        oi = 1
+        ni = length(dim(A)) + 1
+        for (i in c(1:(length(dim(A)) + l))) {
+            if (i %in% loc) {
+                edim = c(edim, ni)
+                ni = ni + 1
+            }
+            else {
+                edim = c(edim, oi)
+                oi = oi + 1
+            }
+        }
+        return(aperm(array(A, dim = sdim), edim))
+    }
+
+    # define row-wise logsumexp
+    logRowSumExp &amp;lt;- function(M) {
+        if (is.null(dim(M))) {return(M)}
+        vms = apply(M,1,max)
+        log(rowSums(exp(M-spread(vms,2,dim(M)[2])))) + vms
+    }
+
+    # define the function to be timed in R
+    simpleEM &amp;lt;- function(y,iters){
+    
+        K = 2
+        N = length($y)
+        
+        EMfun &amp;lt;- function(mu,sigma,alpha,iters){
+            # allocate arrays
+            p = array(0,c(N,K))
+            L = array(0,c(N,K))
+            
+            for (it in 1:iters){
+                # E step
+                
+                # vectorized over N loop
+                for (k in 1:K){
+                    L[ ,k] = log(alpha[k]) + dnorm(y,mean = mu[k], sd = sigma[k], log = TRUE)
+                }
+                p = exp(L - logRowSumExp(L))
+                
+                # M step
+                alpha = colMeans(p)
+                mu = colSums(p * y) / colSums(p)
+                sigma = sqrt( colSums( p * (y - spread(mu,1,N))^2 ) / colSums(p) )
+            }
+            o =list(alpha=alpha,mu=mu,sigma=sigma)
+            return(o)
+        }
+        
+        # starting values
+        mu_    = c(4.0,6.0)
+        sigma_ = c(1.0,1.0)
+        alpha_ = c(0.5,0.5)
+
+        # take time
+        tic()
+        out = EMfun(mu_,sigma_,alpha_,iters)
+        tt = toc()
+        return(list(result = out, time = tt$toc - tt$tic))
+    }
+    simpleEM($y,$iters)   # run function in R!
+    &amp;quot;&amp;quot;&amp;quot;
+    return r_result
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;r-mixtools-package&#34;&gt;&lt;code&gt;R mixtools&lt;/code&gt; package&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://cran.r-project.org/web/packages/mixtools/index.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;mixtools&lt;/code&gt;&lt;/a&gt; package is a very mature and highly optimized package for EM estimation. Most of the computationally intensive parts are written in &lt;code&gt;C&lt;/code&gt;&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:For-example-in-t&#34;&gt;&lt;a href=&#34;#fn:For-example-in-t&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;. My call:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;function bm_R_mixtools(y::Vector{Float64};iters=100)
+    
+    r_result = R&amp;quot;&amp;quot;&amp;quot;
+
+    library(tictoc)
+    library(mixtools)
+
+    mu    = c(4.0,6.0)
+    sigma = c(1.0,1.0)
+    alpha = c(0.5,0.5)
+
+    y = $y
+    N = length(y)
+    K = 2
+    iters = $iters
+    
+    tic()
+    result = normalmixEM(y,k = K,lambda = alpha, mu = mu, sigma = sigma, maxit = iters)
+    tt = toc()
+    list(result = result, time = tt$toc - tt$tic)
+
+    &amp;quot;&amp;quot;&amp;quot;
+    return r_result
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;results&#34;&gt;Results!&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I use the &lt;a href=&#34;https://github.com/JuliaCI/BenchmarkTools.jl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;BenchmarkTools.jl&lt;/code&gt;&lt;/a&gt; package to benchmark the julia functions. This runs the functions multiple times to account for system noise. (running multiple times also gets rid of any JIT-related delays in julia)&lt;/li&gt;
+&lt;li&gt;The &lt;code&gt;R&lt;/code&gt; functions are timed &lt;em&gt;within&lt;/em&gt; the R process using the &lt;code&gt;tictoc&lt;/code&gt; package, so even if there were any significant overhead from &lt;code&gt;RCall.jl&lt;/code&gt;, the measurement is immune to that.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here is the output table, with &lt;code&gt;n&lt;/code&gt; for sample size, and times in seconds:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;n&lt;/th&gt;
+&lt;th&gt;jl&lt;/th&gt;
+&lt;th&gt;jlg&lt;/th&gt;
+&lt;th&gt;R&lt;/th&gt;
+&lt;th&gt;Rmix&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;0.0388268&lt;/td&gt;
+&lt;td&gt;0.0179957&lt;/td&gt;
+&lt;td&gt;0.457&lt;/td&gt;
+&lt;td&gt;0.073&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;100000&lt;/td&gt;
+&lt;td&gt;0.366047&lt;/td&gt;
+&lt;td&gt;0.16506&lt;/td&gt;
+&lt;td&gt;5.068&lt;/td&gt;
+&lt;td&gt;0.889&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;1000000&lt;/td&gt;
+&lt;td&gt;3.99279&lt;/td&gt;
+&lt;td&gt;1.75384&lt;/td&gt;
+&lt;td&gt;47.522&lt;/td&gt;
+&lt;td&gt;8.344&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;10000000&lt;/td&gt;
+&lt;td&gt;46.833&lt;/td&gt;
+&lt;td&gt;31.4021&lt;/td&gt;
+&lt;td&gt;553.783&lt;/td&gt;
+&lt;td&gt;65.379&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;And a much clearer picture using log scales:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://floswald.github.io/img/EM-bench.png&#34; alt=&#34;results&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The naively hand-written code in &lt;code&gt;julia&lt;/code&gt; performs very well.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&#34;https://github.com/davidavdav/GaussianMixtures.jl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;GaussianMixtures.jl&lt;/code&gt;&lt;/a&gt; performs best throughout&lt;/li&gt;
+&lt;li&gt;Both julia implementations outperform the &lt;code&gt;C&lt;/code&gt;-optimized
+&lt;a href=&#34;https://cran.r-project.org/web/packages/mixtools/index.html&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;R mixtools&lt;/code&gt;&lt;/a&gt; package.&lt;/li&gt;
+&lt;li&gt;The vectorized &lt;code&gt;R&lt;/code&gt; version comes in slowest.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I take from this that focusing on extending the work in &lt;a href=&#34;https://github.com/davidavdav/GaussianMixtures.jl&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;GaussianMixtures.jl&lt;/code&gt;&lt;/a&gt; for my purposes is the most promising avenue here.&lt;/p&gt;
+
+&lt;h2 id=&#34;code-and-versions&#34;&gt;Code and Versions&lt;/h2&gt;
+
+&lt;p&gt;Code is on &lt;a href=&#34;https://github.com/floswald/EMbench.jl&#34; target=&#34;_blank&#34;&gt;github&lt;/a&gt; with full package version manifest.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-julia&#34;&gt;julia&amp;gt; versioninfo()
+Julia Version 1.1.0
+Commit 80516ca202 (2019-01-21 21:24 UTC)
+Platform Info:
+  OS: macOS (x86_64-apple-darwin14.5.0)
+  CPU: Intel(R) Core(TM) i5-5257U CPU @ 2.70GHz
+  WORD_SIZE: 64
+  LIBM: libopenlibm
+  LLVM: libLLVM-6.0.1 (ORCJIT, broadwell)
+
+shell&amp;gt; R --version
+R version 3.5.1 (2018-07-02) -- &amp;quot;Feather Spray&amp;quot;
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin15.6.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+http://www.gnu.org/licenses/.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:For-example-in-t&#34;&gt;For example, in the package source, look for &lt;code&gt;src/normpost.c&lt;/code&gt; which evaluates the matrix of posterior probabilities, object &lt;code&gt;p&lt;/code&gt; in the julia code above.  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:For-example-in-t&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     
@@ -258,16 +628,6 @@
 &lt;li&gt;The online textbook is available &lt;a href=&#34;https://scpoecon.github.io/ScPoEconometrics/&#34; target=&#34;_blank&#34;&gt;here.&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;The associated &lt;code&gt;R&lt;/code&gt; package is &lt;a href=&#34;https://github.com/ScPoEcon/ScPoEconometrics&#34; target=&#34;_blank&#34;&gt;on github.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>https://floswald.github.io/post/test/</link>
-      <pubDate>Wed, 09 Jan 2019 13:30:19 +0100</pubDate>
-      
-      <guid>https://floswald.github.io/post/test/</guid>
-      <description>&lt;p&gt;testing&lt;/p&gt;
 </description>
     </item>
     
