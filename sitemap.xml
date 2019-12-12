@@ -3,14 +3,6 @@
     
     <url>
     
-      <loc>https://floswald.github.io/project/hedonic/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://floswald.github.io/post/em-benchmarks/</loc>
       <lastmod>2019-07-06T09:56:47+02:00</lastmod>
     </url>
@@ -177,15 +169,6 @@
     
     <url>
     
-      <loc>https://floswald.github.io/tags/wip/</loc>
-      <lastmod>2019-01-15T10:57:27+01:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    <url>
-    
       <loc>https://floswald.github.io/project/airbnb/</loc>
       <lastmod>2019-01-14T23:15:01+01:00</lastmod>
     </url>
@@ -196,6 +179,23 @@
     
       <loc>https://floswald.github.io/project/fertility/</loc>
       <lastmod>2019-01-14T23:15:01+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/project/landuse/</loc>
+      <lastmod>2019-01-14T23:15:01+01:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://floswald.github.io/tags/wip/</loc>
+      <lastmod>2019-01-14T23:15:01+01:00</lastmod>
+      <priority>0</priority>
     </url>
     
   

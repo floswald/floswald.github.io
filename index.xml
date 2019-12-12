@@ -10,37 +10,6 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hedonic Housing over the Lifecycle</title>
-      <link>https://floswald.github.io/project/hedonic/</link>
-      <pubDate>Tue, 15 Jan 2019 10:57:27 +0100</pubDate>
-      
-      <guid>https://floswald.github.io/project/hedonic/</guid>
-      <description>
-
-&lt;p&gt;In this project we want to build an empirical lifecycle model with the following features:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;2D location choice&lt;/li&gt;
-&lt;li&gt;choice of housing quality index&lt;/li&gt;
-&lt;li&gt;choice of mortgage size&lt;/li&gt;
-&lt;li&gt;choice of liquid savings&lt;/li&gt;
-&lt;li&gt;choice of whether rent vs own&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We directly refer to our &lt;a href=&#34;https://floswald.github.io/publication/housing-stock/&#34; target=&#34;_blank&#34;&gt;companion paper&lt;/a&gt; when thinking about housing supply: It is &lt;em&gt;impossible&lt;/em&gt; to rent a 5 bedroom apartment in the suburbs. Similary, it is &lt;em&gt;relatively expensive&lt;/em&gt; to buy a 4 bedroom flat in the very city center. More generally, the price to rent ratio varies a lot over space and for different housing qualities. Our proposal is to take this more seriously when thinking about housing demand. We think we can get away without any &lt;em&gt;warm glow utility&lt;/em&gt; from housing.&lt;/p&gt;
-
-&lt;h2 id=&#34;status&#34;&gt;Status&lt;/h2&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Code base is written and we can solve restricted problem.&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Solve the full model.&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Data.&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Draft.&lt;/label&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>EM Benchmarks</title>
       <link>https://floswald.github.io/post/em-benchmarks/</link>
       <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
@@ -576,9 +545,33 @@ http://www.gnu.org/licenses/.
 &lt;h2 id=&#34;status&#34;&gt;Status&lt;/h2&gt;
 
 &lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Data Access: Confidential access data to the French Census via &lt;a href=&#34;https://www.casd.eu&#34; target=&#34;_blank&#34;&gt;CASD&lt;/a&gt;&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Data Access: Confidential access data to the French Census&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Theory: We have a working model with joint location, fertility and housing choice. It delivers a closed form house price distribution in each city, equations for migration flows and an expression for the spending share on housing.&lt;/label&gt;&lt;/li&gt;
-&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Data Analysis&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Slides: available upon request&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Data Analysis&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Draft&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Landuse and City Expansion</title>
+      <link>https://floswald.github.io/project/landuse/</link>
+      <pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate>
+      
+      <guid>https://floswald.github.io/project/landuse/</guid>
+      <description>
+
+&lt;p&gt;We propose a new theory for city growth which takes into account the importance of land use outside the city.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://floswald.github.io/img/landuse-densities.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;status&#34;&gt;Status&lt;/h2&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Theory: Baseline model is specified and numerical implementation is available&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Slides: available upon request&lt;/label&gt;&lt;/li&gt;
+&lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Data Analysis&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;&lt;label&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Draft&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
