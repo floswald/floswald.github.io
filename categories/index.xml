@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 25 Apr 2019 12:58:45 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 11 May 2021 14:37:50 +0200</lastBuildDate>
     
 	<atom:link href="https://floswald.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>teaching</title>
+      <link>https://floswald.github.io/categories/teaching/</link>
+      <pubDate>Tue, 11 May 2021 14:37:50 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/categories/teaching/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>research</title>

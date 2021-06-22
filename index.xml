@@ -6,8 +6,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2019</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 May 2021 14:37:50 +0200</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Covid Teaching</title>
+      <link>https://floswald.github.io/post/covid-teaching/</link>
+      <pubDate>Tue, 11 May 2021 14:37:50 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/post/covid-teaching/</guid>
+      <description>
+
+&lt;p&gt;The COVID-19 pandemic posed new challenges to teachers at all levels. In university teaching, we were relatively lucky because we could rely on new technologies like zoom and others to host virtual classes. In this post I&amp;rsquo;ll review my and my students&amp;rsquo; experience over the period from September 2020 until June 2021 in this regard.&lt;/p&gt;
+
+&lt;h2 id=&#34;course-subjects&#34;&gt;Course Subjects&lt;/h2&gt;
+
+&lt;p&gt;I taught 3 subjects this year:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Introduction to Econometrics with R&lt;/li&gt;
+&lt;li&gt;Advanced Econometrics with R&lt;/li&gt;
+&lt;li&gt;Computational Economics&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All of those courses needed to show a fair amount of computer code to students, next to more convential material that would come in the form of lecture slides.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Housing Stock, Housing Prices, and User Costs: The Roles of Location, Structure and Unobserved Quality</title>
@@ -570,21 +594,21 @@ http://www.gnu.org/licenses/.
     </item>
     
     <item>
-      <title>Landuse and City Expansion</title>
+      <title>Structural Change, Landuse and Urban Expansion</title>
       <link>https://floswald.github.io/project/landuse/</link>
       <pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate>
       
       <guid>https://floswald.github.io/project/landuse/</guid>
       <description>
 
-&lt;p&gt;We develop a multi-sector spatial equilibrium model with endogenous land use: land is used either for agriculture or housing. Urban land, densely populated due to commuting frictions, expands out of agricultural land. With rising productivity, the reallocation of workers away from agriculture frees up land for cities to expand, limiting the increase in land values despite higher income and increasing urban population. Due to the reallocation of land use, the area of cities expands at a fast rate and urban density persistently declines, as in the data over a long period. As structural change slows down, cities sprawl less and land values start increasing at a fast rate, as in the last decades. Our theory can thus match the joint evolution of population density and land values across time and space, matching historical data assembled for France over 150 years.&lt;/p&gt;
+&lt;p&gt;We develop a multi-sector spatial equilibrium model with endogenous land use: land is used either for agriculture or housing. Urban land, densely populated due to commuting frictions, expands out of agricultural land. With rising productivity, the reallocation of workers away from agriculture frees up land for cities to expand, limiting the increase in land values despite higher income and increasing urban population. Due to the reallocation of land use, the area of cities expands at a fast rate and urban density persistently declines, as in the data over a long period. As structural change slows down, cities sprawl less and land values start increasing at a faster rate, as in the last decades. Quantitative predictions of the joint evolution of density and land values across time and space are confronted with historical data assembled for France over 180 years.&lt;/p&gt;
 
 &lt;h2 id=&#34;project-status&#34;&gt;Project Status&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://floswald.github.io/pdf/landuse-vmacs.pdf&#34;&gt;Slides&lt;/a&gt; presented at &lt;a href=&#34;https://sites.google.com/view/virtualmacro/vmacs-junior-conference&#34; target=&#34;_blank&#34;&gt;VMACS Junior 2020&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Draft available upon request&lt;/li&gt;
-&lt;li&gt;Estimation is ongoing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://floswald.github.io/pdf/landuse-slides.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://floswald.github.io/pdf/landuse-draft.pdf&#34;&gt;Draft&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Close to Submission! 🎉&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -738,15 +762,6 @@ http://www.gnu.org/licenses/.
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>https://floswald.github.io/publication/bankruptcy-2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Cluster@ScPo</title>
-      <link>https://floswald.github.io/talk/cluster/</link>
-      <pubDate>Tue, 20 Nov 2018 17:00:00 +0100</pubDate>
-      
-      <guid>https://floswald.github.io/talk/cluster/</guid>
       <description></description>
     </item>
     

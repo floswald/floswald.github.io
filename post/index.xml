@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Covid Teaching</title>
+      <link>https://floswald.github.io/post/covid-teaching/</link>
+      <pubDate>Tue, 11 May 2021 14:37:50 +0200</pubDate>
+      
+      <guid>https://floswald.github.io/post/covid-teaching/</guid>
+      <description>The COVID-19 pandemic posed new challenges to teachers at all levels. In university teaching, we were relatively lucky because we could rely on new technologies like zoom and others to host virtual classes. In this post I&amp;rsquo;ll review my and my students&amp;rsquo; experience over the period from September 2020 until June 2021 in this regard.
+Course Subjects I taught 3 subjects this year:
+ Introduction to Econometrics with R Advanced Econometrics with R Computational Economics  All of those courses needed to show a fair amount of computer code to students, next to more convential material that would come in the form of lecture slides.</description>
+    </item>
+    
+    <item>
       <title>EM Benchmarks</title>
       <link>https://floswald.github.io/post/em-benchmarks/</link>
       <pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate>
