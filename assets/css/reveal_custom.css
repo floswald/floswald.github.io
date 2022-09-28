@@ -1,0 +1,15 @@
+.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: rgb(128, 13, 0);
+}
+
+.reveal li {
+  font-size: 0.9em;
+
+}
+
+.reveal p {
+  font-size: 0.9em;
+  text-align: left;
+}
