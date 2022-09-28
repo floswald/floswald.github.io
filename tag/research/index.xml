@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research | Florian Oswald</title><link>https://floswald.github.io/tag/research/</link><atom:link href="https://floswald.github.io/tag/research/index.xml" rel="self" type="application/rss+xml"/><description>research</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Wed, 29 Sep 2021 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>research</title><link>https://floswald.github.io/tag/research/</link></image><item><title>Structural Change, Landuse and Urban Expansion</title><link>https://floswald.github.io/publication/landuse/</link><pubDate>Wed, 29 Sep 2021 00:00:00 +0000</pubDate><guid>https://floswald.github.io/publication/landuse/</guid><description>&lt;h2 id="status">Status&lt;/h2>
+&lt;p>Submitted! 🤞&lt;/p></description></item><item><title>Research Assistants</title><link>https://floswald.github.io/research-assistants/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/research-assistants/</guid><description>&lt;p>I am always looking for motivated research assistants, and I was lucky to work with people who went on to other exciting opportunities after having worked for me (see below!).&lt;/p>
+&lt;h2 id="minimal-requirements">Minimal Requirements&lt;/h2>
+&lt;p>Here is the list of minimal requirements that you need to master in order to be able to work for me:&lt;/p>
+&lt;ol start="0">
+&lt;li>Read &lt;a href="https://web.stanford.edu/%7Egentzkow/research/CodeAndData.pdf" target="_blank" rel="noopener">The RA Philosphy&lt;/a> by Gentzkow and Shapiro&lt;/li>
+&lt;li>Unix shell: You need some basic unix at least to the level of &lt;a href="https://swcarpentry.github.io/shell-novice/" target="_blank" rel="noopener">this&lt;/a>&lt;/li>
+&lt;li>Git: You need git knowledge at the level of &lt;a href="https://swcarpentry.github.io/git-novice/" target="_blank" rel="noopener">that&lt;/a>&lt;/li>
+&lt;li>R. You need solid R skills.
+&lt;ol>
+&lt;li>Work through &lt;a href="https://r4ds.had.co.nz" target="_blank" rel="noopener">Hadley&amp;rsquo;s Book&lt;/a> and show me your solutions to exercises where indicated:
+&lt;ol>
+&lt;li>chapter 4 (no exercises)&lt;/li>
+&lt;li>chapter 5 (all exercises)&lt;/li>
+&lt;li>chapters 9 (no exercises)&lt;/li>
+&lt;li>chapter 13 (all exercises)&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Often you need to work with spatial data. Here are a couple of resources you should look at and try to work through on your computer:
+&lt;ol>
+&lt;li>&lt;a href="https://www.jessesadler.com/post/geocoding-with-r/" target="_blank" rel="noopener">geocoding-with-r&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.jessesadler.com/post/gis-with-r-intro/" target="_blank" rel="noopener">gis-with-r-intro&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://walkerke.github.io/2016/12/spatial-pipelines/" target="_blank" rel="noopener">spatial-pipelines&lt;/a>&lt;/li>
+&lt;li>All &lt;a href="https://r-spatial.github.io/sf/articles/sf1.html" target="_blank" rel="noopener">sf package vignettes 1-5&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>You need to know &lt;a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html" target="_blank" rel="noopener">&lt;code>R data.table&lt;/code>&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Good &lt;code>python&lt;/code> skills is an asset but not a substitute for 4.&lt;/li>
+&lt;li>&lt;code>julia&lt;/code> skills is an asset.&lt;/li>
+&lt;/ol>
+&lt;h2 id="ra-hall-of-fame-">RA Hall of Fame 🎉&lt;/h2>
+&lt;p>Here they are! My current and previous research assistants in one place! I can only claim minimal influence in their successful careers 🤓.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Project/Tools&lt;/th>
+&lt;th style="text-align:center">Tasks&lt;/th>
+&lt;th style="text-align:center">Now at&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://hugolhuillier.github.io" target="_blank" rel="noopener">Hugo L&amp;rsquo;Huillier&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a> / &lt;code>julia, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">Numerical solution of nonlinear model, &lt;code>Plots.jl&lt;/code> graphics&lt;/td>
+&lt;td style="text-align:center">Princeton Econ PhD&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://vviers.github.io/" target="_blank" rel="noopener">Vincent Viers&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/teaching/scpoeconometrics">ScPoEconometrics&lt;/a>, &lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/Airbnb">Airbnb&lt;/a> / &lt;code>R, postgreSQL, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Bash scripting on remote machines. Econometrics tutorials in &lt;code>Rmd&lt;/code>&lt;/td>
+&lt;td style="text-align:center">&lt;a href="https://artefact.com/fr-fr/" target="_blank" rel="noopener">Artefact Paris&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://fr.linkedin.com/in/jeanne-sorin-7a6248137" target="_blank" rel="noopener">Jeanne Sorin&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/ChicagoCrime">Chicago&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>, FE estimation with &lt;code>lfe&lt;/code>. Work on google VM.&lt;/td>
+&lt;td style="text-align:center">PhD U Chicago&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://twitter.com/alberto_nasi" target="_blank" rel="noopener">Alberto Nasi&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a>, &lt;a href="https://floswald.github.io/project/landuse">Landuse&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Work on google VM with big data. Manual data collection from historical maps. Pulling historial US census data with &lt;a href="https://hrecht.github.io/censusapi/" target="_blank" rel="noopener">&lt;code>censusapi&lt;/code>&lt;/a>&lt;/td>
+&lt;td style="text-align:center">Bocconi PhD Econ&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Airbnb vs Rents</title><link>https://floswald.github.io/project/airbnb/</link><pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate><guid>https://floswald.github.io/project/airbnb/</guid><description>&lt;p>What&amp;rsquo;s the causal impact of airbnb listings on long-term rents and house prices? In this project we try to establish a causal link between the two by using proprietary &lt;a href="https://www.airdna.co" target="_blank" rel="noopener">airdna&lt;/a> data together with detailed rental market listings.&lt;/p>
+&lt;h2 id="status">Status&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Data&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Theory: We have a simple model to motivate the estimation&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Data Analysis: We wanted to use &lt;em>terrorism&lt;/em> as a demand shifter for airbnb tourism demand, didn&amp;rsquo;t work. currently looking for alternatives.&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Draft&lt;/li>
+&lt;/ul></description></item><item><title>Fertility, Housing Costs and City Growth</title><link>https://floswald.github.io/project/fertility/</link><pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate><guid>https://floswald.github.io/project/fertility/</guid><description>&lt;p>In this project we want to better understand the role of fertility choices in the context of the standard Urban Model. How many children will be born in each location? Why is fertility different across cities? What is the role of fertility for city growth, over and above migratory flows alone? How could the literature on fertility think for so long about long run trends without considering the impact of children on the equilibrium house price? What&amp;rsquo;s the impact of the increasing shift in household composition towards smaller households for the house price distribution of different cities?&lt;/p>
+&lt;h2 id="status">Status&lt;/h2>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Data Access: Confidential access data to the French Census&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Theory: We have a working model with joint location, fertility and housing choice. It delivers a closed form house price distribution in each city, equations for migration flows and an expression for the spending share on housing.&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Slides&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Data Analysis&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Draft&lt;/li>
+&lt;/ul></description></item></channel></rss>

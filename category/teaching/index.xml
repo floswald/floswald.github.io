@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>teaching | Florian Oswald</title><link>https://floswald.github.io/category/teaching/</link><atom:link href="https://floswald.github.io/category/teaching/index.xml" rel="self" type="application/rss+xml"/><description>teaching</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Mon, 27 Dec 2021 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>teaching</title><link>https://floswald.github.io/category/teaching/</link></image><item><title>Covid Teaching</title><link>https://floswald.github.io/post/covid-teaching/</link><pubDate>Mon, 27 Dec 2021 00:00:00 +0000</pubDate><guid>https://floswald.github.io/post/covid-teaching/</guid><description>&lt;p>The COVID-19 pandemic posed new challenges to teachers at all levels. In university teaching, we were relatively lucky because we could rely on new technologies like zoom and others to host virtual classes. In this post I&amp;rsquo;ll review my and my students&amp;rsquo; experience over the period from September 2020 until December 2021 in this regard. What I have learned is applicable to both online and in-person teaching.&lt;/p>
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#course-subjects">Course Subjects&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#teaching-philosophy">Teaching Philosophy&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#1-hands-on">1. Hands On&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-team-work">2. Team Work&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#technology">Technology&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#1-materials-and-accessibility">1. Materials and Accessibility&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-communication">2. Communication&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-presentation-mode">3. Presentation Mode&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#undergraduate-econometrics-courses">Undergraduate Econometrics Courses&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#1-introduction-to-econometrics-with-r">1. Introduction to Econometrics with &lt;code>R&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-advanced-econometrics">2. Advanced Econometrics&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#computational-economics-for-phds">Computational Economics for PhDs&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#testimonials-2">Testimonials&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="course-subjects">Course Subjects&lt;/h2>
+&lt;p>I taught 3 subjects over this period for the department of economics at SciencesPo Paris, as well as the department of economics at Bocconi University (where I&amp;rsquo;m on sabbatical leave 2021/2022):&lt;/p>
+&lt;ol>
+&lt;li>Introduction to Econometrics with &lt;code>R&lt;/code> (2nd year undergraduate)&lt;/li>
+&lt;li>Advanced Econometrics with &lt;code>R&lt;/code> (3rd year undergraduate)&lt;/li>
+&lt;li>Computational Economics (PhD Students)&lt;/li>
+&lt;/ol>
+&lt;p>The unifying feature of the three courses is that they all use a fair amount of computer code to either help illustrate core concepts (in the econometrics courses), or indeed because code is the main content to talk about (in the computational economics course). I like to think of both sets of courses as &lt;em>data science courses&lt;/em> for Economists. I will first describe the overarching philosphy that guided me when designing these courses, then say a few things about technology and then describe more in detail how each course is set up.&lt;/p>
+&lt;br>
+&lt;h2 id="teaching-philosophy">Teaching Philosophy&lt;/h2>
+&lt;h3 id="1-hands-on">1. Hands On&lt;/h3>
+&lt;p>The main overarching idea is that working with computers and software to solve problems &lt;em>needs to be practiced&lt;/em> first hand, i.e. by the students themselves. Presenting a &lt;em>how to do XYZ&lt;/em> cookbook recipe on a slide has only limited value, if it does not serve as an introduction to a practical exercise where students try to actually &lt;em>do XYZ&lt;/em>. To be clear, cookbook recipes, particularly if they provide a fully working example that can be executed by the student from start to finish, are valuable. In all of my courses, I try to encourage this kind of learning by doing with frequent in-class tasks, or homework assignments. Also for the final term project I much prefer to give a take home exam where small teams develop something together, rather than the typical exam format, which does not lend itself naturally to computing tasks, I find.&lt;/p>
+&lt;h3 id="2-team-work">2. Team Work&lt;/h3>
+&lt;p>I try to encourage as much team work as possible. It is very common that some students had more previous experience with some aspects of a task than others, and there are obvious benefits from the less experienced student of being able to follow the lead of the more experienced one. Next to acquiring the information necessary to complete a task, the student also learns to overcome a certain form of &lt;em>stigma&lt;/em> which deters them from asking questions. To effectively use modern software means to be able to interact with the relevant community for help, hence, asking questions about code is a first order skill that I want students to acquire.
+What is less appreciated at times, however, are the benefits to the more experienced student having to explain a concept, which I think are substantial. As many teachers will be able to confirm, teaching also means to view problems from a different angle at times, which can be challenging, but rewarding.
+Particularly in a software-centered setting, team work is a great way to keep &lt;em>tooling-related frustration&lt;/em> (the general occurence of &lt;em>this does not work&lt;/em>) at a minimum. &lt;em>Tooling-related frustration&lt;/em> is a big challenge for courses that involve software.&lt;/p>
+&lt;br>
+&lt;h2 id="technology">Technology&lt;/h2>
+&lt;h3 id="1-materials-and-accessibility">1. Materials and Accessibility&lt;/h3>
+&lt;p>In my view it is first order important to provide students with a one-stop solution with regards to course materials: a single webpage should host all relevant material. Online-education platforms like moodle or blackboard, for example, offer good solutions, however I personally prefer providing content via &lt;code>Github.com&lt;/code> as a static website (or simply the &lt;code>README.MD&lt;/code> of a code repository). I wrote a lot of code for the material of my courses, either alone or with the help of collaborators, and there is no better environment in my view than a social coding platform like &lt;code>github.com&lt;/code> or other similar services, which is the main source of my preference for this over moodle or blackboard.&lt;/p>
+&lt;h3 id="2-communication">2. Communication&lt;/h3>
+&lt;p>Clear and simple communication is key, in normal times and much more so in online settings. I try to stay away from email for communication with students and prefer things like Slack, or other chatroom-like platforms. Email is not well suited for discussions, as threads become unreadable and incomprehensible after several replies. Different dedicated &lt;em>channels&lt;/em> in a slack workspace help to organise discussions around certain topics (for instance, the &lt;code>homeworks&lt;/code> or the &lt;code>term paper&lt;/code> channel), while still allowing for private messages to be sent. The public forum aspect is first order important, because the odds of two or more students having very similar problems are very high in any given setting, so there are clear benefits from asking the entire group. A screenshot from this year&amp;rsquo;s computational course at Bocconi in &lt;a href="#figure-slack">figure 1&lt;/a> shows another benefit, which is readable code formatting, and, of course, emojis 🎉!&lt;/p>
+&lt;figure id="figure-slack">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="blog-slack.png" alt="Figure 1: Slack Example" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Figure 1: Slack Example
+&lt;/figcaption>&lt;/figure>
+&lt;p>In general, these are exciting times to try out new environments for teaching, and everything that makes teaching (and learning) more fun and enjoyable should be an option. In November 2020, for example, we used the custom-built &lt;a href="https://www.gather.town/" target="_blank" rel="noopener">gather.town&lt;/a> model of the department of economics at SciencesPo in order to do group work in the econometrics course. Students choose different virtual &amp;ldquo;rooms&amp;rdquo; to sit in (they have to walk around on screen in a very simple 2D setting), and then talk to each other in a video-conference. We found it works very well for group work.&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">today we over-geeked it in advanced metrics We met in the &lt;a href="https://t.co/qCNYYPb1zJ">https://t.co/qCNYYPb1zJ&lt;/a> model of &lt;a href="https://twitter.com/ScPoEcon?ref_src=twsrc%5Etfw">@ScPoEcon&lt;/a> built by &lt;a href="https://twitter.com/johannesmboehm?ref_src=twsrc%5Etfw">@johannesmboehm&lt;/a>, I streamed via OBS to zoom (for recording), slack chat, sharing R solutions on screen...the full geek stack. I had so 👏much👏fun👏 &lt;a href="https://t.co/VjqSLIaQ0h">pic.twitter.com/VjqSLIaQ0h&lt;/a>&lt;/p>&amp;mdash; Florian Oswald 🇪🇺 🇺🇦 (@FlorianOswald) &lt;a href="https://twitter.com/FlorianOswald/status/1328660455070511107?ref_src=twsrc%5Etfw">November 17, 2020&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;h3 id="3-presentation-mode">3. Presentation Mode&lt;/h3>
+&lt;p>In online courses, the presentation mode is very important. There is evidence that the attention span in front of a screen is even shorter than in a classroom, hence we face formidable challenges to the traditional 2 hours frontal teaching format. Notice that the need for a full online course only exacerbates those challenges, which exist in normal times as well.&lt;/p>
+&lt;p>I have found a simple and low-cost combination of material and tools to be very beneficial for students, &lt;a href="https://twitter.com/lukestein/status/1297306413358866433?s=20" target="_blank" rel="noopener">inspired by others&lt;/a>. In a Zoom-like environment, one has the option to share different input video streams. Using the open source &lt;a href="https://obsproject.com/" target="_blank" rel="noopener">Open Broadcaster Software (OBS)&lt;/a>, a simple green background (clotton cloth or custom green screens) and a little bit of time goes a long way from converting the standard &amp;ldquo;speaker in a little box&amp;rdquo; view into a more engaging setup where the teacher sits within the content (can be any part of the screen, so pdf viewers as well as a web browser or a command terminal.) For an example see &lt;a href="#figure-green">figure 2&lt;/a>.&lt;/p>
+&lt;figure id="figure-green">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="blog-elbow.png" alt="Figure 2: In-content view of teacher via OBS and green screen from *Advanced Econometrics* taught at SciencesPo Paris." loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Figure 2: In-content view of teacher via OBS and green screen from &lt;em>Advanced Econometrics&lt;/em> taught at SciencesPo Paris.
+&lt;/figcaption>&lt;/figure>
+&lt;br>
+&lt;h2 id="undergraduate-econometrics-courses">Undergraduate Econometrics Courses&lt;/h2>
+&lt;br>
+&lt;p>We decided to use simulation studies and plenty of interactive apps for teaching Econometrics and to replace the bulk of proofs used traditionally (e.g. the Law of Large Numbers, or biasedness of certain estimators etc). This choice implied that we had to spend less time trying to explain proofs, but had more time to cover the importantl subjects. What is more, we designed a second part to the course for the more motivated students, to satisfy their interest for more in-depth material.&lt;/p>
+&lt;h3 id="1-introduction-to-econometrics-with-r">1. Introduction to Econometrics with &lt;code>R&lt;/code>&lt;/h3>
+&lt;p>The introduction course is taught to second year students. We collect all relevant material on the &lt;a href="https://github.com/ScPoEcon/ScPoEconometrics-Slides" target="_blank" rel="noopener">code repository&lt;/a> where we develop the code for the slides. Notice the set of contributors on the repository as well, each of which I would like to thank at this point - I was very lucky with this set of Teaching Assistants!&lt;/p>
+&lt;p>&lt;strong>Materials:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://github.com/ScPoEcon/ScPoEconometrics-Slides" target="_blank" rel="noopener">Slides:&lt;/a> I came to like HTML-based slides better than the usual PDF-based ones, mainly because they are easy to distribute (they are just another website), and because I find them much easier to write than with LaTeX. Also, one can include such exotic content as a video (or an emoji! 🤯), which is very helpful sometimes. 😉&lt;/li>
+&lt;li>&lt;a href="https://scpoecon.github.io/ScPoEconometrics/" target="_blank" rel="noopener">Online Book: &lt;/a> built with the excellent R bookdown package.&lt;/li>
+&lt;li>&lt;a href="https://github.com/ScPoEcon/ScPoApps" target="_blank" rel="noopener">&lt;code>R&lt;/code> shiny apps:&lt;/a> This &lt;code>R&lt;/code> package contains the interactive shiny apps which we use to explain core concepts. The apps illustrate simple statistical concepts, like correlation, to more advanced ones like multicollinearity in a multiple regression setting, all with an interactive element where students can change the main parameters of interest. The apps can be run on each student&amp;rsquo;s own computer, or they can be deployed online via &lt;a href="https://www.shinyapps.io/" target="_blank" rel="noopener">shinyapps&lt;/a>.&lt;/li>
+&lt;li>Bi-weekly quizzes deployed to the Moodle platform via the excellent &lt;a href="http://www.r-exams.org/" target="_blank" rel="noopener">&lt;code>R-exams&lt;/code>&lt;/a> package.&lt;/li>
+&lt;/ol>
+&lt;p>As one can see from browsing the slides, we try to intersperse each session with several &lt;em>tasks&lt;/em> after abour 15-20 minutes of time. Those tasks are not evaluated and serve only to make sure that students understand the current concept. We found those tasks to be very important to &lt;em>immediately&lt;/em> react if a student seems to fall behind on a certain topic. For an example of traditional vs simulation based content, we use no asymptotic theory results to talk about uncertainty in regression estimates, but instead rely on the bootstrap sampling distribution, which we can illustrate effectively in class by having students sample with replacement. This part of our course is based on &lt;a href="https://moderndive.com/" target="_blank" rel="noopener">moderndive&lt;/a>, which we highly recommend for this purpose.&lt;/p>
+&lt;h4 id="testimonials">Testimonials&lt;/h4>
+&lt;blockquote>
+&lt;p>Professor Oswald went above and beyond to research and utilise different resources to make the class as engaging as possible (eg virtual economics department and use of a light board). The use of slack was great also.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Really interest and potentially very useful content learning how to code. Regular quizzes ensured we kept on top of the content and unlimited time for quizzes meant you could take your time and get to grips with the concepts which I loved. Using examples to highlight concepts also made it much more interesting, and the online Sciences Po classroom was one of the coolest things ever. Really enjoyed the modes of assessment it was so interesting getting to do our own topics and experiment with the code and having the midterm as a blueprint was extremely helpful as a starting point to build upon for the final project.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>The course material was clear and fundamental for the course&amp;rsquo;s comprehension. Mr OSWALD was always helpful and available to clear up any miscomprehension. The course was not easy to grasp sometimes but the quizzes ans tasks were helpful.&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="2-advanced-econometrics">2. Advanced Econometrics&lt;/h3>
+&lt;p>This course is the natural follow-up to what was taught in the intro part and includes core concepts like Instrumental Variables (explained via Directed Acyclic Graphs), Panel Data, Discrete Outcomes and a short but comprehensive introduction to Machine Learning. The slides are available &lt;a href="https://github.com/ScPoEcon/Advanced-Metrics-slides" target="_blank" rel="noopener">on github&lt;/a>, and parts of the book above cover material for this course. In general, we follow exactly the same structure with bi-weekly quizzes on moodle and tasks in class. We also use interactive apps to illustrate for instance &lt;a href="https://floswald.shinyapps.io/ScPoMetrics-ability-bias/" target="_blank" rel="noopener">ability bias in wage regressions and IV&lt;/a>, or the &lt;a href="https://floswald.shinyapps.io/bias_variance/" target="_blank" rel="noopener">bias-variance tradeoff&lt;/a>, or why the &lt;a href="https://floswald.shinyapps.io/marginal_effects_of_logit_probit" target="_blank" rel="noopener">marginal effects of nonlinear models&lt;/a> like Probit and Logit are different from OLS coefficients.&lt;/p>
+&lt;h4 id="testimonials-1">Testimonials&lt;/h4>
+&lt;blockquote>
+&lt;p>This course was really great and a lot of fun. The teacher is great and the content of the course is fascinating. I deeply enjoyed the code part and I&amp;rsquo;m looking forward to studying more of R and other languages used in computational statistics. This course strengthens my desire to pursue economic studies and certainly has given me the taste for research.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>I think that the way we have been taught economectrics is a very good one in the sense that we were often asked to apply theoretical bases to the practice (during the class tutorials) some 10 minutes after learning about it. I feel like it has been very helpful in understanding something quite complicated. I also appreciated that we did those tutorials in teams so that we could share our experience in R (e.g. different R syntax) and our ideas of how to solve the task. The same counts for the bigger projects - midterm and final. Other than that, the slides and the style of teaching were often funny and clear, with practical examples so that we could fully understand the idea behind the econometric methods. Great class.&lt;/p>
+&lt;/blockquote>
+&lt;br>
+&lt;h2 id="computational-economics-for-phds">Computational Economics for PhDs&lt;/h2>
+&lt;p>My &lt;a href="https://floswald.github.io/NumericalMethods/" target="_blank" rel="noopener">Computational Economics course&lt;/a> is following the same philosophy as above, but for a more advanced audience. Motivated mostly by things I would have liked to know when I was a graduate student myself - and had to learn the hard way - the material has grown in a somewhat organic fashion. I try to cover the main tools needed to solve and estimate a modern economic model, so nonlinear optimization with constraints is a big part. As above, many aspects of how different algorithms work can be illustrated with a graphical device, and the new &lt;a href="https://github.com/fonsp/Pluto.jl" target="_blank" rel="noopener">Pluto.jl&lt;/a> notebook format is an &lt;em>excellent&lt;/em> teaching environment to create interactive experiences in a very simple way. We introduce the &lt;a href="https://julialang.org/" target="_blank" rel="noopener">&lt;code>julia&lt;/code>&lt;/a> language for technical computing, and treat applications and problems from a wide array of economics: marco applications (like the &lt;a href="https://floswald.github.io/NumericalMethods/lecture7-dp4/" target="_blank" rel="noopener">Aiyagari Model&lt;/a>), or structural micro applications like &lt;a href="https://floswald.github.io/NumericalMethods/lecture10/" target="_blank" rel="noopener">estimation of the Rust Bus Model&lt;/a> with different methods. Again, large part of the value added in my opinion is derived from the homeworks, also available on the &lt;a href="https://floswald.github.io/NumericalMethods/" target="_blank" rel="noopener">course website&lt;/a>.&lt;/p>
+&lt;p>In spring 2021 I taught the course as part of the CIVICA pan-european PhD network, with a great group of students from across the continent. 👇&lt;/p>
+&lt;blockquote class="twitter-tweet">&lt;p lang="en" dir="ltr">&lt;a href="https://twitter.com/hashtag/EconTwitter?src=hash&amp;amp;ref_src=twsrc%5Etfw">#EconTwitter&lt;/a> Excited! my course &lt;a href="https://t.co/kZrQZMTChM">https://t.co/kZrQZMTChM&lt;/a> is offered to PhD students at 8 (!) top EU Universities this spring! 👇 Still time to sign up! What do you sign up for? Tons of fun with &lt;a href="https://twitter.com/JuliaLang?ref_src=twsrc%5Etfw">@julialang&lt;/a>, we&amp;#39;ll go full &lt;a href="https://twitter.com/PlutoJL?ref_src=twsrc%5Etfw">@PlutoJL&lt;/a> and do lots of *sliding*. Like, lockdown anyone? &lt;a href="https://t.co/uNeYsFQ2d7">https://t.co/uNeYsFQ2d7&lt;/a> &lt;a href="https://t.co/bx04NXgvoy">pic.twitter.com/bx04NXgvoy&lt;/a>&lt;/p>&amp;mdash; Florian Oswald 🇪🇺 🇺🇦 (@FlorianOswald) &lt;a href="https://twitter.com/FlorianOswald/status/1352380924479086599?ref_src=twsrc%5Etfw">January 21, 2021&lt;/a>&lt;/blockquote>
+&lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8">&lt;/script>
+&lt;h3 id="testimonials-2">Testimonials&lt;/h3>
+&lt;blockquote>
+&lt;p>the teacher was very approchable, the communication with him was easy and fast, the instructions were always very clear, the content of the course was interesting and I feel like most students of this master should take it&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>The use of online tools was the obvious strength of the course: as a consequence, the e-learning experience was virtually the same as in the classroom.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Comprehensive explanations, rich varieties of online tools and useful homework. The Prof was very committed to transfer coding skills in different ways.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

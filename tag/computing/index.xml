@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>computing | Florian Oswald</title><link>https://floswald.github.io/tag/computing/</link><atom:link href="https://floswald.github.io/tag/computing/index.xml" rel="self" type="application/rss+xml"/><description>computing</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Sat, 06 Jul 2019 09:56:47 +0200</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>computing</title><link>https://floswald.github.io/tag/computing/</link></image><item><title>EM Benchmarks</title><link>https://floswald.github.io/post/em-benchmarks/</link><pubDate>Sat, 06 Jul 2019 09:56:47 +0200</pubDate><guid>https://floswald.github.io/post/em-benchmarks/</guid><description>&lt;p>I am getting into estimating mixture models at the moment. In particular in the context of models of wage formation where unobserved heterogeneity stemming from both firm and worker side is often modeled with a mixture model. The main assumptions are that&lt;/p>
+&lt;ol>
+&lt;li>Firms are classifiable into types $l \in \{1,\dots,L\}$, workers into $k \in \{1,\dots,K\}$&lt;/li>
+&lt;li>If Worker $i$ is of type $k$ and works for firm $l$ in a certain period, their wages are drawn from distribution $\mathcal{N}(\mu_{k,l},\sigma_{k,l})$.&lt;/li>
+&lt;/ol>
+&lt;p>This kind of model is at the current frontier of econometrics, and a recent paper is &lt;a href="https://www.econometricsociety.org/publications/econometrica/2019/05/01/distributional-framework-matched-employer-employee-data" target="_blank" rel="noopener">Bonhomme, Lamadon and Manresa (Econometrica 2019)&lt;/a>, ungated &lt;a href="http://www.lamadon.com/paper/blm.pdf" target="_blank" rel="noopener">here&lt;/a>, with a great &lt;a href="https://github.com/tlamadon/blm-replicate" target="_blank" rel="noopener">replication package in &lt;code>R&lt;/code>&lt;/a>.&lt;/p>
+&lt;p>The estimation of such models often involves using the &lt;a href="https://en.wikipedia.org/wiki/Expectation%e2%80%93maximization_algorithm" target="_blank" rel="noopener">EM-Algorithm&lt;/a>, which I won&amp;rsquo;t describe in detail here.&lt;/p>
+&lt;h2 id="weapon-of-choice">Weapon of Choice?&lt;/h2>
+&lt;p>Now before getting to the full model above, I wanted to know my options in terms of programming language. I decided to benchmark a simple version of the above problem: there is only one firm type (&lt;em>all workers at the same firm&lt;/em>), and there are only two worker types, $K=2$. I am considering two options in terms of language: &lt;code>R&lt;/code> and &lt;code>julia&lt;/code>.&lt;/p>
+&lt;p>I&amp;rsquo;ll do a hand-coded version in each language, as well as use a package from each:&lt;/p>
+&lt;ul>
+&lt;li>Hand-coding is relevant because my final problem will need some modification of existing algorithms.&lt;/li>
+&lt;li>Packages are relevant because they often provide efficient implementations, and could be the building block on which my extension is based.&lt;/li>
+&lt;/ul>
+&lt;p>Here goes!&lt;/p>
+&lt;h3 id="benchmark-setup">Benchmark Setup&lt;/h3>
+&lt;p>I will benchmark everything out of a &lt;code>julia&lt;/code> session by relying on the &lt;a href="https://github.com/JuliaInterop/RCall.jl" target="_blank" rel="noopener">&lt;code>RCall.jl&lt;/code>&lt;/a> package (&lt;a href="https://github.com/floswald/EMbench.jl" target="_blank" rel="noopener">benchmark code on this repo&lt;/a>). &lt;code>RCall.jl&lt;/code> launches an &lt;code>R&lt;/code> session from within &lt;code>julia&lt;/code> and allows to go back and forth with surprisingly little overhead (accesses the same locations in RAM, so no data is copied). The advantage of this is that I can create the exact same benchmarking data to test in both languages. So all code you see here is valid &lt;code>julia&lt;/code>, even though sometimes it contains some &lt;code>R&lt;/code>. Cool, right?🕺&lt;/p>
+&lt;p>Here is the data creator:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="n">sdata&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">doplot&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Random&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">seed!&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3333&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># true values&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">μ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">2.0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">5.0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">σ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">0.7&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">α&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.3&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">0.7&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">m&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">MixtureModel&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">Normal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">μ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">σ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">α&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">doplot&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">m&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">linewidth&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">plot&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">m&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">linewidth&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">fill&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="ss">:red&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="n">components&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nb">false&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">title&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;Mixture&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>&lt;span class="n">dpi&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">300&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">savefig&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;mixtures.png&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">y&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">rand&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">m&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">n&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kt">Dict&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="ss">:y&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ss">:μ&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">μ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ss">:σ&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">σ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ss">:α&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">α&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>sets true mixture parameters&lt;/li>
+&lt;li>creates a &lt;code>Distributions.MixtureModel&lt;/code> data type&lt;/li>
+&lt;li>optionally makes a plot from it&lt;/li>
+&lt;li>draws &lt;code>n&lt;/code> random realizations from it&lt;/li>
+&lt;/ul>
+&lt;p>The setup looks like this:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://floswald.github.io/img/EM-mixtures.png" alt="benchmark data" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>All benchmarks will now proceed in the same way:&lt;/p>
+&lt;ol>
+&lt;li>Take vector &lt;code>y&lt;/code>&lt;/li>
+&lt;li>set (the same) wrong starting values&lt;/li>
+&lt;li>run the EM algorithm for &lt;code>iters&lt;/code> iterations to find true values of proportion weights $\alpha$, means $\mu$ and variances $\sigma$ for each component.&lt;/li>
+&lt;li>Notice that the starting values are such that the algorithm never fully recovers the true values. Given it&amp;rsquo;s the same data, however, each implementation will follow the same path for parameter values and run the same number of iterations (again, none until convergence).&lt;/li>
+&lt;/ol>
+&lt;h3 id="julia-by-hand">&lt;code>julia&lt;/code> by hand&lt;/h3>
+&lt;p>Here is my relatively naive and &lt;em>just-copy-thy-math&lt;/em> implemenation in &lt;code>julia&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="n">bm_jl&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="kt">Vector&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="kt">Float64&lt;/span>&lt;span class="p">};&lt;/span>&lt;span class="n">iters&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># poor starting values&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">μ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">4.0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">6.0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">σ&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">α&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">N&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">K&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">μ&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># initialize objects &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">L&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">zeros&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">N&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">K&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">similar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">L&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">it&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">iters&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dists&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">Normal&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">μ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ik&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">σ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">ik&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">ik&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">K&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># evaluate likelihood for each type &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">N&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">k&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="n">K&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># Distributions.jl logpdf()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">L&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">α&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">logpdf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">dists&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">k&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># get posterior of each type &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">p&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">exp&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">L&lt;/span> &lt;span class="o">.-&lt;/span> &lt;span class="n">logsumexp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">L&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># with p in hand, update &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">α&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="n">vec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">dims&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">./&lt;/span> &lt;span class="n">N&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">μ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="n">vec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="o">.*&lt;/span> &lt;span class="n">y&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dims&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">./&lt;/span> &lt;span class="n">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dims&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">σ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="n">vec&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sqrt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p&lt;/span> &lt;span class="o">.*&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span> &lt;span class="o">.-&lt;/span> &lt;span class="n">μ&lt;/span>&lt;span class="o">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.^&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dims&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">./&lt;/span> &lt;span class="n">sum&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">p&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dims&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kt">Dict&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="ss">:α&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">α&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ss">:μ&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">μ&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="ss">:σ&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="n">σ&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gaussianmixturesjlhttpsgithubcomdavidavdavgaussianmixturesjl">&lt;a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank" rel="noopener">&lt;code>GaussianMixtures.jl&lt;/code>&lt;/a>&lt;/h3>
+&lt;p>Next is a julia package written for this purpose. Here is the relevant part:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="n">bm_jl_GMM&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="kt">Vector&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="kt">Float64&lt;/span>&lt;span class="p">};&lt;/span>&lt;span class="n">iters&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmm&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">GMM&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c"># initialize an empty GMM object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># stick in our starting values&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmm&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">μ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">4.0&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="mf">6.0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmm&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Σ&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">gmm&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">w&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">.=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="mf">0.5&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># run em!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">em!&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gmm&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="p">],&lt;/span>&lt;span class="n">nIter&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">iters&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">gmm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="r-not-so-naive-by-hand">&lt;code>R&lt;/code> not-so-naive by hand&lt;/h3>
+&lt;ul>
+&lt;li>I tried to vectorize as much as possible here&lt;/li>
+&lt;li>Self-imposed rules: no &lt;code>Rcpp&lt;/code>&lt;/li>
+&lt;li>You can see this uses an &lt;code>R&lt;/code>-string, where data values are interpolated with a &lt;code>$&lt;/code> into the &lt;code>R&lt;/code> session.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># this is a julia function!&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="n">bm_R&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="n">iters&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c"># that defines an R-string, sent off to R.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">r_result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">R&lt;/span>&lt;span class="s">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> library(tictoc)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # define a `repeat` function
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> spread &amp;lt;- function (A, loc, dims) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> if (!(is.array(A))) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> A = array(A, dim = c(length(A)))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> adims = dim(A)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> l = length(loc)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> if (max(loc) &amp;gt; length(dim(A)) + l) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> stop(&amp;#34;incorrect dimensions in spread&amp;#34;)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sdim = c(dim(A), dims)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> edim = c()
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> oi = 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ni = length(dim(A)) + 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> for (i in c(1:(length(dim(A)) + l))) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> if (i %in% loc) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> edim = c(edim, ni)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ni = ni + 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> else {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> edim = c(edim, oi)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> oi = oi + 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> return(aperm(array(A, dim = sdim), edim))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # define row-wise logsumexp
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> logRowSumExp &amp;lt;- function(M) {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> if (is.null(dim(M))) {return(M)}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> vms = apply(M,1,max)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> log(rowSums(exp(M-spread(vms,2,dim(M)[2])))) + vms
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # define the function to be timed in R
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> simpleEM &amp;lt;- function(y,iters){
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> K = 2
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> N = length(&lt;/span>&lt;span class="si">$y&lt;/span>&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> EMfun &amp;lt;- function(mu,sigma,alpha,iters){
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # allocate arrays
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> p = array(0,c(N,K))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> L = array(0,c(N,K))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> for (it in 1:iters){
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # E step
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # vectorized over N loop
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> for (k in 1:K){
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> L[ ,k] = log(alpha[k]) + dnorm(y,mean = mu[k], sd = sigma[k], log = TRUE)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> p = exp(L - logRowSumExp(L))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # M step
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> alpha = colMeans(p)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> mu = colSums(p * y) / colSums(p)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sigma = sqrt( colSums( p * (y - spread(mu,1,N))^2 ) / colSums(p) )
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> o =list(alpha=alpha,mu=mu,sigma=sigma)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> return(o)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # starting values
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> mu_ = c(4.0,6.0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sigma_ = c(1.0,1.0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> alpha_ = c(0.5,0.5)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> # take time
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tic()
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> out = EMfun(mu_,sigma_,alpha_,iters)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tt = toc()
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> return(list(result = out, time = tt&lt;/span>&lt;span class="si">$toc&lt;/span>&lt;span class="s"> - tt&lt;/span>&lt;span class="si">$tic&lt;/span>&lt;span class="s">))
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> }
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> simpleEM(&lt;/span>&lt;span class="si">$y&lt;/span>&lt;span class="s">,&lt;/span>&lt;span class="si">$iters&lt;/span>&lt;span class="s">) # run function in R!
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">r_result&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="r-mixtools-package">&lt;code>R mixtools&lt;/code> package&lt;/h3>
+&lt;p>The &lt;a href="https://cran.r-project.org/web/packages/mixtools/index.html" target="_blank" rel="noopener">&lt;code>mixtools&lt;/code>&lt;/a> package is a very mature and highly optimized package for EM estimation. Most of the computationally intensive parts are written in &lt;code>C&lt;/code>^[For example, in the package source, look for &lt;code>src/normpost.c&lt;/code> which evaluates the matrix of posterior probabilities, object &lt;code>p&lt;/code> in the julia code above. ]. My call:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="k">function&lt;/span> &lt;span class="n">bm_R_mixtools&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">y&lt;/span>&lt;span class="o">::&lt;/span>&lt;span class="kt">Vector&lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="kt">Float64&lt;/span>&lt;span class="p">};&lt;/span>&lt;span class="n">iters&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">r_result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">R&lt;/span>&lt;span class="s">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> library(tictoc)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> library(mixtools)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> mu = c(4.0,6.0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> sigma = c(1.0,1.0)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> alpha = c(0.5,0.5)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> y = &lt;/span>&lt;span class="si">$y&lt;/span>&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> N = length(y)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> K = 2
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> iters = &lt;/span>&lt;span class="si">$iters&lt;/span>&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tic()
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> result = normalmixEM(y,k = K,lambda = alpha, mu = mu, sigma = sigma, maxit = iters)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tt = toc()
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> list(result = result, time = tt&lt;/span>&lt;span class="si">$toc&lt;/span>&lt;span class="s"> - tt&lt;/span>&lt;span class="si">$tic&lt;/span>&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">r_result&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="results">Results!&lt;/h2>
+&lt;ul>
+&lt;li>I use the &lt;a href="https://github.com/JuliaCI/BenchmarkTools.jl" target="_blank" rel="noopener">&lt;code>BenchmarkTools.jl&lt;/code>&lt;/a> package to benchmark the julia functions. This runs the functions multiple times to account for system noise. (running multiple times also gets rid of any JIT-related delays in julia)&lt;/li>
+&lt;li>The &lt;code>R&lt;/code> functions are timed &lt;em>within&lt;/em> the R process using the &lt;code>tictoc&lt;/code> package, so even if there were any significant overhead from &lt;code>RCall.jl&lt;/code>, the measurement is immune to that.&lt;/li>
+&lt;/ul>
+&lt;p>Here is the output table, with &lt;code>n&lt;/code> for sample size, and times in seconds:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>n&lt;/th>
+&lt;th>jl&lt;/th>
+&lt;th>jlg&lt;/th>
+&lt;th>R&lt;/th>
+&lt;th>Rmix&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>10000&lt;/td>
+&lt;td>0.0388268&lt;/td>
+&lt;td>0.0179957&lt;/td>
+&lt;td>0.457&lt;/td>
+&lt;td>0.073&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>100000&lt;/td>
+&lt;td>0.366047&lt;/td>
+&lt;td>0.16506&lt;/td>
+&lt;td>5.068&lt;/td>
+&lt;td>0.889&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>1000000&lt;/td>
+&lt;td>3.99279&lt;/td>
+&lt;td>1.75384&lt;/td>
+&lt;td>47.522&lt;/td>
+&lt;td>8.344&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10000000&lt;/td>
+&lt;td>46.833&lt;/td>
+&lt;td>31.4021&lt;/td>
+&lt;td>553.783&lt;/td>
+&lt;td>65.379&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>And a much clearer picture using log scales:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://floswald.github.io/img/EM-bench.png" alt="results" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="conclusions">Conclusions&lt;/h2>
+&lt;ol>
+&lt;li>The naively hand-written code in &lt;code>julia&lt;/code> performs very well.&lt;/li>
+&lt;li>The &lt;a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank" rel="noopener">&lt;code>GaussianMixtures.jl&lt;/code>&lt;/a> performs best throughout&lt;/li>
+&lt;li>Both julia implementations outperform the &lt;code>C&lt;/code>-optimized
+&lt;a href="https://cran.r-project.org/web/packages/mixtools/index.html" target="_blank" rel="noopener">&lt;code>R mixtools&lt;/code>&lt;/a> package.&lt;/li>
+&lt;li>The vectorized &lt;code>R&lt;/code> version comes in slowest.&lt;/li>
+&lt;/ol>
+&lt;p>I take from this that focusing on extending the work in &lt;a href="https://github.com/davidavdav/GaussianMixtures.jl" target="_blank" rel="noopener">&lt;code>GaussianMixtures.jl&lt;/code>&lt;/a> for my purposes is the most promising avenue here.&lt;/p>
+&lt;h2 id="code-and-versions">Code and Versions&lt;/h2>
+&lt;p>Code is on &lt;a href="https://github.com/floswald/EMbench.jl" target="_blank" rel="noopener">github&lt;/a> with full package version manifest.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-julia" data-lang="julia">&lt;span class="line">&lt;span class="cl">&lt;span class="n">julia&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">versioninfo&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Julia&lt;/span> &lt;span class="n">Version&lt;/span> &lt;span class="mf">1.1.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Commit&lt;/span> &lt;span class="mi">80516&lt;/span>&lt;span class="n">ca202&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">2019&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">01&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">21&lt;/span> &lt;span class="mi">21&lt;/span>&lt;span class="o">:&lt;/span>&lt;span class="mi">24&lt;/span> &lt;span class="n">UTC&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Platform&lt;/span> &lt;span class="n">Info&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">OS&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="n">macOS&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">x86_64&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">apple&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">darwin14&lt;/span>&lt;span class="mf">.5.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">CPU&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="n">Intel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">R&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">Core&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">TM&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="n">i5&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">5257&lt;/span>&lt;span class="n">U&lt;/span> &lt;span class="n">CPU&lt;/span> &lt;span class="err">@&lt;/span> &lt;span class="mf">2.70&lt;/span>&lt;span class="n">GHz&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">WORD_SIZE&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">64&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">LIBM&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="n">libopenlibm&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">LLVM&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="n">libLLVM&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">6.0.1&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">ORCJIT&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">broadwell&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">shell&lt;/span>&lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="o">--&lt;/span>&lt;span class="n">version&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">R&lt;/span> &lt;span class="n">version&lt;/span> &lt;span class="mf">3.5.1&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">2018&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">07&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">02&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">--&lt;/span> &lt;span class="s">&amp;#34;Feather Spray&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Copyright&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">C&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="mi">2018&lt;/span> &lt;span class="n">The&lt;/span> &lt;span class="n">R&lt;/span> &lt;span class="n">Foundation&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">Statistical&lt;/span> &lt;span class="n">Computing&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">Platform&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="n">x86_64&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">apple&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">darwin15&lt;/span>&lt;span class="mf">.6.0&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="mi">64&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">bit&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">R&lt;/span> &lt;span class="n">is&lt;/span> &lt;span class="n">free&lt;/span> &lt;span class="n">software&lt;/span> &lt;span class="n">and&lt;/span> &lt;span class="n">comes&lt;/span> &lt;span class="n">with&lt;/span> &lt;span class="n">ABSOLUTELY&lt;/span> &lt;span class="n">NO&lt;/span> &lt;span class="n">WARRANTY&lt;/span>&lt;span class="o">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">You&lt;/span> &lt;span class="n">are&lt;/span> &lt;span class="n">welcome&lt;/span> &lt;span class="n">to&lt;/span> &lt;span class="n">redistribute&lt;/span> &lt;span class="n">it&lt;/span> &lt;span class="n">under&lt;/span> &lt;span class="n">the&lt;/span> &lt;span class="n">terms&lt;/span> &lt;span class="n">of&lt;/span> &lt;span class="n">the&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">GNU&lt;/span> &lt;span class="n">General&lt;/span> &lt;span class="n">Public&lt;/span> &lt;span class="n">License&lt;/span> &lt;span class="n">versions&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="n">or&lt;/span> &lt;span class="mf">3.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">For&lt;/span> &lt;span class="n">more&lt;/span> &lt;span class="n">information&lt;/span> &lt;span class="n">about&lt;/span> &lt;span class="n">these&lt;/span> &lt;span class="n">matters&lt;/span> &lt;span class="n">see&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">http&lt;/span>&lt;span class="o">://&lt;/span>&lt;span class="n">www&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">gnu&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">licenses&lt;/span>&lt;span class="o">/.&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Computing</title><link>https://floswald.github.io/computing/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/computing/</guid><description>&lt;p>You can find all of my publicly assessible software on my &lt;a href="https://github.com/floswald" target="_blank" rel="noopener">github profile&lt;/a>.&lt;/p>
+&lt;p>I have written software in high-level languages like Matlab, python, &lt;code>R&lt;/code> and &lt;a href="https://julialang.org" target="_blank" rel="noopener">&lt;code>julia&lt;/code>&lt;/a>. I am an expert &lt;code>R&lt;/code> and &lt;code>julia&lt;/code> user, I&amp;rsquo;ve good python skills, Matlab is somewhat outdated. I am well-versed with &lt;code>C++&lt;/code> and &lt;code>fortran&lt;/code>. I am using PostgreSQL + postgis databases (interfaced from either R or python) to manage large scale geo-spatial datasets.&lt;/p>
+&lt;p>I have used the phantastic &lt;a href="http://rcpp.org" target="_blank" rel="noopener">Rcpp&lt;/a> (&lt;code>R&lt;/code> + &lt;code>C++&lt;/code>) package in several projects. I have been using Julia for computationally intensive projects starting in 2014 for my job market paper, and I have never looked back.&lt;/p>
+&lt;h2 id="some-open-source-projects">Some Open Source Projects&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Role&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;th>Status&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/Tasmanian.jl" target="_blank" rel="noopener">&lt;code>Tasmanian.jl&lt;/code>&lt;/a>&lt;img width=700/>&lt;/td>
+&lt;td>Author&lt;/td>
+&lt;td>Julia Wrapper to the Tasmanian Library for Adaptive Sparse Grid Approximations&lt;/td>
+&lt;td>&lt;a href="https://travis-ci.org/floswald/Tasmanian.jl" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://travis-ci.org/floswald/Tasmanian.jl.svg?branch=master" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a> &lt;a href="https://ci.appveyor.com/project/floswald/tasmanian-jl" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://ci.appveyor.com/api/projects/status/di1gkhjhn49ghbge?svg=true" alt="Build status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/MomentOpt.jl" target="_blank" rel="noopener">&lt;code>MomentOpt.jl&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Co-author and principal maintainer&lt;/td>
+&lt;td>Parallel derivative-free moment optimization in Julia.&lt;/td>
+&lt;td>&lt;a href="https://travis-ci.org/floswald/MomentOpt.jl" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://travis-ci.org/floswald/MomentOpt.jl.svg?branch=master" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;a href="https://ci.appveyor.com/project/floswald/MomentOpt-jl/branch/master" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://ci.appveyor.com/api/projects/status/github/floswald/MomentOpt.jl?branch=master&amp;amp;svg=true" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/ScPoEcon/ScPoEconometrics" target="_blank" rel="noopener">&lt;code>ScPoEconometrics&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Co-author and principal maintainer&lt;/td>
+&lt;td>2nd year UG econometrics course at SciencesPo&lt;/td>
+&lt;td>&lt;a href="https://travis-ci.org/ScPoEcon/ScPoEconometrics" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://travis-ci.org/ScPoEcon/ScPoEconometrics.svg?branch=master" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;a href="https://ci.appveyor.com/project/ScPoEcon/ScPoEconometrics" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://ci.appveyor.com/api/projects/status/github/ScPoEcon/ScPoEconometrics?branch=master&amp;amp;svg=true" alt="AppVeyor Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/psidR" target="_blank" rel="noopener">&lt;code>psidR&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Author&lt;/td>
+&lt;td>R package to build PSID panel data. Supports direct download from PSID server (no STATA needed!)&lt;/td>
+&lt;td>&lt;a href="https://travis-ci.org/floswald/psidR" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://travis-ci.org/floswald/psidR.svg" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/ApproXD.jl" target="_blank" rel="noopener">&lt;code>ApproXD.jl&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Author&lt;/td>
+&lt;td>Julia package for up to 4D high performance linear interpolation as well as tensor product of B-Spline interpolation of arbitrary dimension.&lt;/td>
+&lt;td>&lt;a href="https://travis-ci.org/floswald/ApproXD.jl" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://travis-ci.org/floswald/ApproXD.jl.svg?branch=master" alt="Build Status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;a href="https://ci.appveyor.com/project/floswald/approxd-jl" target="_blank" rel="noopener">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://ci.appveyor.com/api/projects/status/p4tr6m340xa1r9a6?svg=true" alt="Build status" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/EconData" target="_blank" rel="noopener">&lt;code>EconData&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Author&lt;/td>
+&lt;td>R package with datasets for economic research that I assembled over time and couldn&amp;rsquo;t find in a more suitable format.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/wealthometer" target="_blank" rel="noopener">&lt;code>Wealth-o-Meter&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Maintainer&lt;/td>
+&lt;td>Online Wealth Calculator and Policy Simulator&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://github.com/floswald/parallelTest" target="_blank" rel="noopener">&lt;code>parallelTest&lt;/code>&lt;/a>&lt;/td>
+&lt;td>Principal Author&lt;/td>
+&lt;td>Repo with tests for parallel computation for a host of hpc systems.&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item></channel></rss>
