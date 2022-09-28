@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computing | Florian Oswald</title>
+    <link>https://floswald.github.io/category/computing/</link>
+      <atom:link href="https://floswald.github.io/category/computing/index.xml" rel="self" type="application/rss+xml" />
+    <description>computing</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Thu, 25 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://floswald.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>computing</title>
+      <link>https://floswald.github.io/category/computing/</link>
+    </image>
+    
+    <item>
+      <title>Computing</title>
+      <link>https://floswald.github.io/computing/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>https://floswald.github.io/computing/</guid>
+      <description>&lt;p&gt;You can find all of my publicly assessible software on my &lt;a href=&#34;https://github.com/floswald&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github profile&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I have written software in high-level languages like Matlab, python, &lt;code&gt;R&lt;/code&gt; and &lt;a href=&#34;https://julialang.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;julia&lt;/code&gt;&lt;/a&gt;. I am an expert &lt;code&gt;R&lt;/code&gt; and &lt;code&gt;julia&lt;/code&gt; user, I&amp;rsquo;ve good python skills, Matlab is somewhat outdated. I am well-versed with &lt;code&gt;C++&lt;/code&gt; and &lt;code&gt;fortran&lt;/code&gt;. I am using PostgreSQL + postgis databases (interfaced from either R or python) to manage large scale geo-spatial datasets.&lt;/p&gt;
+&lt;p&gt;I have used the phantastic &lt;a href=&#34;http://rcpp.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rcpp&lt;/a&gt; (&lt;code&gt;R&lt;/code&gt; + &lt;code&gt;C++&lt;/code&gt;) package in several projects. I have been using Julia for computationally intensive projects starting in 2014 for my job market paper, and I have never looked back.&lt;/p&gt;
+&lt;h2 id=&#34;some-open-source-projects&#34;&gt;Some Open Source Projects&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Role&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Status&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/Tasmanian.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Tasmanian.jl&lt;/code&gt;&lt;/a&gt;&lt;img width=700/&gt;&lt;/td&gt;
+&lt;td&gt;Author&lt;/td&gt;
+&lt;td&gt;Julia Wrapper to the Tasmanian Library for Adaptive Sparse Grid Approximations&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://travis-ci.org/floswald/Tasmanian.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://travis-ci.org/floswald/Tasmanian.jl.svg?branch=master&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt; &lt;a href=&#34;https://ci.appveyor.com/project/floswald/tasmanian-jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://ci.appveyor.com/api/projects/status/di1gkhjhn49ghbge?svg=true&#34; alt=&#34;Build status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/MomentOpt.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;MomentOpt.jl&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Co-author and principal maintainer&lt;/td&gt;
+&lt;td&gt;Parallel derivative-free moment optimization in Julia.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://travis-ci.org/floswald/MomentOpt.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://travis-ci.org/floswald/MomentOpt.jl.svg?branch=master&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;a href=&#34;https://ci.appveyor.com/project/floswald/MomentOpt-jl/branch/master&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://ci.appveyor.com/api/projects/status/github/floswald/MomentOpt.jl?branch=master&amp;amp;svg=true&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/ScPoEcon/ScPoEconometrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;ScPoEconometrics&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Co-author and principal maintainer&lt;/td&gt;
+&lt;td&gt;2nd year UG econometrics course at SciencesPo&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://travis-ci.org/ScPoEcon/ScPoEconometrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://travis-ci.org/ScPoEcon/ScPoEconometrics.svg?branch=master&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;a href=&#34;https://ci.appveyor.com/project/ScPoEcon/ScPoEconometrics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://ci.appveyor.com/api/projects/status/github/ScPoEcon/ScPoEconometrics?branch=master&amp;amp;svg=true&#34; alt=&#34;AppVeyor Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/psidR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;psidR&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Author&lt;/td&gt;
+&lt;td&gt;R package to build PSID panel data. Supports direct download from PSID server (no STATA needed!)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://travis-ci.org/floswald/psidR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://travis-ci.org/floswald/psidR.svg&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/ApproXD.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;ApproXD.jl&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Author&lt;/td&gt;
+&lt;td&gt;Julia package for up to 4D high performance linear interpolation as well as tensor product of B-Spline interpolation of arbitrary dimension.&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://travis-ci.org/floswald/ApproXD.jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://travis-ci.org/floswald/ApproXD.jl.svg?branch=master&#34; alt=&#34;Build Status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;a href=&#34;https://ci.appveyor.com/project/floswald/approxd-jl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://ci.appveyor.com/api/projects/status/p4tr6m340xa1r9a6?svg=true&#34; alt=&#34;Build status&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/EconData&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;EconData&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Author&lt;/td&gt;
+&lt;td&gt;R package with datasets for economic research that I assembled over time and couldn&amp;rsquo;t find in a more suitable format.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/wealthometer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;Wealth-o-Meter&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Maintainer&lt;/td&gt;
+&lt;td&gt;Online Wealth Calculator and Policy Simulator&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/floswald/parallelTest&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;parallelTest&lt;/code&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Principal Author&lt;/td&gt;
+&lt;td&gt;Repo with tests for parallel computation for a host of hpc systems.&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cluster@ScPo</title>
+      <link>https://floswald.github.io/talk/clusterscpo/</link>
+      <pubDate>Tue, 20 Nov 2018 17:00:00 +0100</pubDate>
+      <guid>https://floswald.github.io/talk/clusterscpo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FCA</title>
+      <link>https://floswald.github.io/talk/fca/</link>
+      <pubDate>Thu, 06 Sep 2018 14:00:42 +0000</pubDate>
+      <guid>https://floswald.github.io/talk/fca/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

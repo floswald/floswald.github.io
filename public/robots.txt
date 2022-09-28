@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://floswald.github.io/sitemap.xml
