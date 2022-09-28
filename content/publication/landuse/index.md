@@ -39,4 +39,4 @@ url_video: ""
 
 ## Status
 
-Submitted! 🤞
+Revise and Resubmit at *Review of Economic Studies* 💪
