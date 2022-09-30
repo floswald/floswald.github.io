@@ -11,6 +11,7 @@ slides:
   # Choose a code highlighting style (if highlighting enabled in `params.toml`)
   #   Light style: github. Dark style: dracula (default).
   highlight_style: dracula
+
 ---
 
 ## Do Appraiser and Borrower Race Affect Valuation?
@@ -24,10 +25,10 @@ slides:
 
 ### Intro
 
-* Property appraisers are trained to asses property value estimates.
+* Property appraisers are trained to asses property values.
 * Large body of evidence going back to the 60s of discriminatory practices in mortgage markets - HMDA.
-* *Extremely* relevant setting: In remortgageing setting, appraiser *proclaims* the value of property (not the market).
-* **This Paper**: Is there racial bias in remortgageing appraisals?
+* *Extremely* relevant setting: In remortgaging setting, appraiser is the single agent determining the value of property (not  market interactions) - Appraiser *faces no competition*.
+* **This Paper**: Is there racial bias in remortgaging appraisals?
 
 
 ---
@@ -54,20 +55,29 @@ slides:
 * It would be good to know more about this *black box* model.
 * We should know what variables it uses, at which geographic scale.
 * How well does it perform?
-* 🤔 Why do lenders send appraisers instead of relying on the model?
 * Outcome $Y_i$ is difference between appraiser and some estimate we don't know much about. (We know it's a *moving target*.)
+
+{{< fragment >}}
+* 🤔 Why do lenders send appraisers instead of relying on the model?
+{{< /fragment >}}
 
 ---
 
-### Comment: Quality
+### Comment 2: Unobserved Quality
 
 $$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_i +\omega_i + \epsilon_i$$
 
 {{< fragment >}}
 * $X$: property type, investment properties, multi-unit properties, condominiums, and PUDs
-* *Unobserved House Quality* is the elephant in the room. 
+{{< /fragment >}}
+
+{{< fragment >}}
+* *Unobserved House Quality* is potentially a big issue here. 
 * Omitted variable bias could be severe. Notice that the appraiser FE does not deal with this.
 * If avg unobserved quality of group $g$ is relatively high, we will *underestimate* discrimination, and vice versa.
+{{< /fragment >}}
+
+{{< fragment >}}
 * Here are a few candidates:
 {{< /fragment >}}
 
@@ -75,9 +85,17 @@ $$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_
 
 ### Potentially Omitted Variables
 
-1. Age of property. It may be that certain groups can afford only buildings of older vintage, which could be assessed a lower value. 
+{{< fragment >}}
+1. Age of property. It may be that certain groups can afford only buildings of older vintage, which could imply a lower assessment. 
+{{< /fragment >}}
+
+{{< fragment >}}
 2. Investments in structure, maintainance and upkeep: Less affluent groups may find it harder to make timely investments (roof, heating, insulation...), which in turn impact the appraisal.
+{{< /fragment >}}
+
+{{< fragment >}}
 3. Investments in home improvement: Less affluent groups may find it harder to install winter garden or swimming pools, with the same effect on valuations.
+{{< /fragment >}}
 
 ---
 
@@ -85,5 +103,14 @@ $$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_
 
 * A building-level fixed effect. [Vladimir Avetian](http://jmp-consider-the-slavs.tilda.ws/) can use one in documenting (overt) discrimination in Moscow's housing market. *Probably hard here - unless you have a bunch of properties in a single unit?*
 * Get more data on the property to increase $X$? With current data seemingly impossible. What about ZTRAX, which has tons of characteristics (and First and Last name of Buyer and Seller), or something similar?
-* The upside could be that one obtains more credible identification, downside that one probably uses the race (indeed, the name) of the appraiser.
+* More info on borrowers? Controlling for income (wealth better) would be ideal - education? 
 
+---
+
+### Conclusion
+
+1. Very important topic.
+2. Exciting database with appraisers race marker.
+3. Getting better measures of quality and/or borrower characteristics would help.
+
+Thanks!
