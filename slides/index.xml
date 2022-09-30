@@ -117,10 +117,10 @@ data-background-image="/media/boards.jpg"
 &lt;hr>
 &lt;h3 id="intro">Intro&lt;/h3>
 &lt;ul>
-&lt;li>Property appraisers are trained to asses property value estimates.&lt;/li>
+&lt;li>Property appraisers are trained to asses property values.&lt;/li>
 &lt;li>Large body of evidence going back to the 60s of discriminatory practices in mortgage markets - HMDA.&lt;/li>
-&lt;li>&lt;em>Extremely&lt;/em> relevant setting: In remortgageing setting, appraiser &lt;em>proclaims&lt;/em> the value of property (not the market).&lt;/li>
-&lt;li>&lt;strong>This Paper&lt;/strong>: Is there racial bias in remortgageing appraisals?&lt;/li>
+&lt;li>&lt;em>Extremely&lt;/em> relevant setting: In remortgaging setting, appraiser is the single agent determining the value of property (not market interactions) - Appraiser &lt;em>faces no competition&lt;/em>.&lt;/li>
+&lt;li>&lt;strong>This Paper&lt;/strong>: Is there racial bias in remortgaging appraisals?&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="approach">Approach&lt;/h3>
@@ -143,32 +143,62 @@ data-background-image="/media/boards.jpg"
 &lt;li>It would be good to know more about this &lt;em>black box&lt;/em> model.&lt;/li>
 &lt;li>We should know what variables it uses, at which geographic scale.&lt;/li>
 &lt;li>How well does it perform?&lt;/li>
-&lt;li>🤔 Why do lenders send appraisers instead of relying on the model?&lt;/li>
 &lt;li>Outcome $Y_i$ is difference between appraiser and some estimate we don&amp;rsquo;t know much about. (We know it&amp;rsquo;s a &lt;em>moving target&lt;/em>.)&lt;/li>
 &lt;/ul>
+&lt;span class="fragment " >
+&lt;ul>
+&lt;li>🤔 Why do lenders send appraisers instead of relying on the model?&lt;/li>
+&lt;/ul>
+&lt;/span>
 &lt;hr>
-&lt;h3 id="comment-quality">Comment: Quality&lt;/h3>
+&lt;h3 id="comment-2-unobserved-quality">Comment 2: Unobserved Quality&lt;/h3>
 &lt;p>$$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_i +\omega_i + \epsilon_i$$&lt;/p>
 &lt;span class="fragment " >
 &lt;ul>
 &lt;li>$X$: property type, investment properties, multi-unit properties, condominiums, and PUDs&lt;/li>
-&lt;li>&lt;em>Unobserved House Quality&lt;/em> is the elephant in the room.&lt;/li>
+&lt;/ul>
+&lt;/span>
+&lt;span class="fragment " >
+&lt;ul>
+&lt;li>&lt;em>Unobserved House Quality&lt;/em> is potentially a big issue here.&lt;/li>
 &lt;li>Omitted variable bias could be severe. Notice that the appraiser FE does not deal with this.&lt;/li>
 &lt;li>If avg unobserved quality of group $g$ is relatively high, we will &lt;em>underestimate&lt;/em> discrimination, and vice versa.&lt;/li>
+&lt;/ul>
+&lt;/span>
+&lt;span class="fragment " >
+&lt;ul>
 &lt;li>Here are a few candidates:&lt;/li>
 &lt;/ul>
 &lt;/span>
 &lt;hr>
 &lt;h3 id="potentially-omitted-variables">Potentially Omitted Variables&lt;/h3>
+&lt;span class="fragment " >
 &lt;ol>
-&lt;li>Age of property. It may be that certain groups can afford only buildings of older vintage, which could be assessed a lower value.&lt;/li>
+&lt;li>Age of property. It may be that certain groups can afford only buildings of older vintage, which could imply a lower assessment.&lt;/li>
+&lt;/ol>
+&lt;/span>
+&lt;span class="fragment " >
+&lt;ol start="2">
 &lt;li>Investments in structure, maintainance and upkeep: Less affluent groups may find it harder to make timely investments (roof, heating, insulation&amp;hellip;), which in turn impact the appraisal.&lt;/li>
+&lt;/ol>
+&lt;/span>
+&lt;span class="fragment " >
+&lt;ol start="3">
 &lt;li>Investments in home improvement: Less affluent groups may find it harder to install winter garden or swimming pools, with the same effect on valuations.&lt;/li>
 &lt;/ol>
+&lt;/span>
 &lt;hr>
 &lt;h3 id="potential-solutions">Potential Solutions&lt;/h3>
 &lt;ul>
 &lt;li>A building-level fixed effect. &lt;a href="http://jmp-consider-the-slavs.tilda.ws/" target="_blank" rel="noopener">Vladimir Avetian&lt;/a> can use one in documenting (overt) discrimination in Moscow&amp;rsquo;s housing market. &lt;em>Probably hard here - unless you have a bunch of properties in a single unit?&lt;/em>&lt;/li>
 &lt;li>Get more data on the property to increase $X$? With current data seemingly impossible. What about ZTRAX, which has tons of characteristics (and First and Last name of Buyer and Seller), or something similar?&lt;/li>
-&lt;li>The upside could be that one obtains more credible identification, downside that one probably uses the race (indeed, the name) of the appraiser.&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;li>More info on borrowers? Controlling for income (wealth better) would be ideal - education?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="conclusion">Conclusion&lt;/h3>
+&lt;ol>
+&lt;li>Very important topic.&lt;/li>
+&lt;li>Exciting database with appraisers race marker.&lt;/li>
+&lt;li>Getting better measures of quality and/or borrower characteristics would help.&lt;/li>
+&lt;/ol>
+&lt;p>Thanks!&lt;/p></description></item></channel></rss>
