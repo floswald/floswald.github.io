@@ -9,7 +9,7 @@ date: 2019-01-14 23:15:01+01:00
 draft: false
 
 image:
-  caption: 'Mobility 🌍 city growth 🌆 and 👨‍👩‍👧‍👦 fertilty'
+  caption: 'Density Dependent Fertility in France'
   focal_point: ''
   preview_only: false
 tags:
