@@ -19,7 +19,7 @@ tags:
 title: Fertility, Housing Costs and City Growth
 url_slides: "/pdf/fertility-slides.pdf"
 ---
-In this project we want to better understand the role of fertility choices in the context of the standard Urban Model. How many children will be born in each location? Why is fertility different across cities? What is the role of fertility for city growth, over and above migratory flows alone? How could the literature on fertility think for so long about long run trends without considering the impact of children on the equilibrium house price? What's the impact of the increasing shift in household composition towards smaller households for the house price distribution of different cities?
+Developed economies moved from a baby boom to a baby bust, with very low fertility in large urban centers. We develop a spatial theory of demographic change and urban growth, whereby the housing market acts as an endogenous automatic stabilizer of fertility: high housing costs deter fertility while lower demographic growth mitigates future housing price increase. Our theory predicts rich dynamics of fertility and housing costs across space and time. The aging of baby boomers and their sorting across space triggers a later baby bust, more pronounced in larger cities, together with a long-lasting fertility and house price cycle that varies across locations. The predictions of the theoretical model with endogenous demographics and city growth are confronted to the data for French urban areas over the last decades.
 
 ## Status
 
