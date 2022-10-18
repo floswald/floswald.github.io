@@ -32,10 +32,6 @@ feature:
   icon: wrench
   icon_pack: fas
   name: fortran
-- description: 80%
-  icon: file-code
-  icon_pack: fas
-  name: C++
 - description: 100%
   icon: chart-line
   icon_pack: fas
