@@ -29,7 +29,7 @@ image:
 
 url_code: ""
 url_pdf: ""
-url_slides: ""
+url_slides: "/pdf/buses-slides.pdf"
 url_video: ""
 
 # Slides (optional).
