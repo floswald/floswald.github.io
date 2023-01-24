@@ -22,7 +22,7 @@ tags:
 - econ
 - research
 - wip
-title: Structural Change, Landuse and Urban Expansion
+title: Structural Change, Landuse and Urban Expansion (R&R @ REStud)
 
 links:
   - name: Appendix
