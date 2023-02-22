@@ -21,7 +21,7 @@ title: Intro to Programming M1
 ## Objectives
 
 
-1. After this course, we want to be able to participate or conduct your own research project in an efficient way. Research nowadays means data sciencey stuff in most cases, certainly in Economics.
+1. After this course, we want you to be able to participate or conduct your own research project in an efficient way. Research nowadays means data sciencey stuff in most cases, certainly in Economics.
 2. We want you to have a basic understanding of how an operating system (in particular, your OS) works.
 3. We want to be able to achieve a basic level of automation in repetitive tasks.
 4. We want you to know what Version Control is and how to use it in a research project.
