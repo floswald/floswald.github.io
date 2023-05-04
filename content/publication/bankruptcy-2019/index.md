@@ -20,7 +20,7 @@ publication_short: working paper
 # 7 = Thesis; 8 = Patent
 publication_types: ["3"]
 selected: true
-title: Consumer Bankrupcty, Mortgage Default and Labor Supply
+title: Consumer Bankrupcty, Mortgage Default and Labor Supply (R&R @ IER)
 url_code: ''
 url_dataset: ''
 url_pdf: /pdf/bankruptcy.pdf
