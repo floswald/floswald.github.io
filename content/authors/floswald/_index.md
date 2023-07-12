@@ -11,7 +11,7 @@ role: Assistant Professor of Economics
 # Organizations/Affiliations to show in About widget
 organizations:
 - name: SciencesPo Paris
-  url: https://www.sciencespo.fr
+  url: https://www.sciencespo.fr/department-economics/
 
 # Short bio (displayed in user profile at end of posts)
 bio: I'm interested in Urban/Macro/Labour and computational methods
@@ -65,6 +65,7 @@ email: ""
 highlight_name: false
 ---
 
-I am an Assistant Professor of Economics at SciencesPo in Paris. My work is in the fields of Housing, Urban, Macro and Labor Economics. I also like to think about computational techniques required for structural estimation of microeconometric models.
+I am an Assistant Professor of Economics at SciencesPo in Paris. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computationl methods.
+I am the [Data Editor](https://ejdataeditor.github.io/) for [The Economic Journal](https://res.org.uk/journals/the-economic-journal/) and for the [The Econometrics Journal](https://res.org.uk/journals/the-econometrics-journal/).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "tex/floswald.pdf" "newtab" >}}CV{{< /staticref >}}.
