@@ -32,7 +32,7 @@ links:
     url: "/pdf/landuse-appendixB.pdf"      
 # url_code: "https://floswald.github.io/LandUse.jl/"
 url_pdf: "/pdf/landuse-paper.pdf"
-# url_slides: "/pdf/landuse-slides.pdf"
+url_slides: "/pdf/landuse-slides.pdf"
 url_video: ""
 ---
 
