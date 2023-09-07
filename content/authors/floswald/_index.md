@@ -65,7 +65,7 @@ email: ""
 highlight_name: false
 ---
 
-I am an Assistant Professor of Economics at SciencesPo in Paris. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computationl methods.
+I am an Associate Professor of Economics at SciencesPo in Paris. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computational methods.
 I am the [Data Editor](https://ejdataeditor.github.io/) for [The Economic Journal](https://res.org.uk/journals/the-economic-journal/) and for the [The Econometrics Journal](https://res.org.uk/journals/the-econometrics-journal/).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "tex/floswald.pdf" "newtab" >}}CV{{< /staticref >}}.
