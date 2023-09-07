@@ -14,12 +14,12 @@ organizations:
   url: https://www.sciencespo.fr/department-economics/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I'm interested in Urban/Macro/Labour and computational methods
+bio: I'm interested in Urban/Macro/Labour/IO and computational methods
 
 
 # Interests to show in About widget
 interests:
-- Urban/Macro/Labour
+- Urban/Macro/Labour/IO
 - Computational Methods
 - Reproducible Research
 
