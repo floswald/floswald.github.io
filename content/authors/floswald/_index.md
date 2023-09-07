@@ -6,7 +6,7 @@ title: Florian Oswald
 superuser: true
 
 # Role/position/tagline
-role: Assistant Professor of Economics
+role: Associate Professor of Economics
 
 # Organizations/Affiliations to show in About widget
 organizations:
