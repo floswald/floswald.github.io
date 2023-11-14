@@ -17,7 +17,7 @@ I am always looking for motivated research assistants, and I was lucky to work w
 
 Here is the list of minimal requirements that you need to master in order to be able to work for me: 
 
-1. You know everything that is taught in [this course](/teaching/introprogramming) I teach at SciencesPo.
+1. You know at least 70% of what is taught in [this course](/teaching/introprogramming) I teach at SciencesPo.
 2. That's it. 😉
 
 
