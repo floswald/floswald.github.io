@@ -578,33 +578,9 @@ Figure 2: In-content view of teacher via OBS and green screen from &lt;em>Advanc
 &lt;/table></description></item><item><title>Research Assistants</title><link>https://floswald.github.io/research-assistants/</link><pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/research-assistants/</guid><description>&lt;p>I am always looking for motivated research assistants, and I was lucky to work with people who went on to other exciting opportunities after having worked for me (see below!).&lt;/p>
 &lt;h2 id="minimal-requirements">Minimal Requirements&lt;/h2>
 &lt;p>Here is the list of minimal requirements that you need to master in order to be able to work for me:&lt;/p>
-&lt;ol start="0">
-&lt;li>Read &lt;a href="https://web.stanford.edu/%7Egentzkow/research/CodeAndData.pdf" target="_blank" rel="noopener">The RA Philosphy&lt;/a> by Gentzkow and Shapiro&lt;/li>
-&lt;li>Unix shell: You need some basic unix at least to the level of &lt;a href="https://swcarpentry.github.io/shell-novice/" target="_blank" rel="noopener">this&lt;/a>&lt;/li>
-&lt;li>Git: You need git knowledge at the level of &lt;a href="https://swcarpentry.github.io/git-novice/" target="_blank" rel="noopener">that&lt;/a>&lt;/li>
-&lt;li>R. You need solid R skills.
 &lt;ol>
-&lt;li>Work through &lt;a href="https://r4ds.had.co.nz" target="_blank" rel="noopener">Hadley&amp;rsquo;s Book&lt;/a> and show me your solutions to exercises where indicated:
-&lt;ol>
-&lt;li>chapter 4 (no exercises)&lt;/li>
-&lt;li>chapter 5 (all exercises)&lt;/li>
-&lt;li>chapters 9 (no exercises)&lt;/li>
-&lt;li>chapter 13 (all exercises)&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>Often you need to work with spatial data. Here are a couple of resources you should look at and try to work through on your computer:
-&lt;ol>
-&lt;li>&lt;a href="https://www.jessesadler.com/post/geocoding-with-r/" target="_blank" rel="noopener">geocoding-with-r&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.jessesadler.com/post/gis-with-r-intro/" target="_blank" rel="noopener">gis-with-r-intro&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://walkerke.github.io/2016/12/spatial-pipelines/" target="_blank" rel="noopener">spatial-pipelines&lt;/a>&lt;/li>
-&lt;li>All &lt;a href="https://r-spatial.github.io/sf/articles/sf1.html" target="_blank" rel="noopener">sf package vignettes 1-5&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>You need to know &lt;a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html" target="_blank" rel="noopener">&lt;code>R data.table&lt;/code>&lt;/a>.&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>Good &lt;code>python&lt;/code> skills is an asset but not a substitute for 4.&lt;/li>
-&lt;li>&lt;code>julia&lt;/code> skills is an asset.&lt;/li>
+&lt;li>You know everything that is taught in &lt;a href="https://floswald.github.io/teaching/introprogramming">this course&lt;/a> I teach at SciencesPo.&lt;/li>
+&lt;li>That&amp;rsquo;s it. 😉&lt;/li>
 &lt;/ol>
 &lt;h2 id="ra-hall-of-fame-">RA Hall of Fame 🎉&lt;/h2>
 &lt;p>Here they are! My current and previous research assistants in one place! I can only claim minimal influence in their successful careers 🤓.&lt;/p>
