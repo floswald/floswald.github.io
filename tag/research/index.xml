@@ -47,7 +47,7 @@
 &lt;tr>
 &lt;td>&lt;a href="https://hugolhuillier.github.io" target="_blank" rel="noopener">Hugo L&amp;rsquo;Huillier&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a> / &lt;code>julia, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">Numerical solution of nonlinear model, &lt;code>Plots.jl&lt;/code> graphics&lt;/td>
+&lt;td style="text-align:center">Numerical solution of complex nonlinear model with julia, &lt;code>Plots.jl&lt;/code> graphics&lt;/td>
 &lt;td style="text-align:center">Princeton Econ PhD&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -57,7 +57,7 @@
 &lt;td style="text-align:center">&lt;a href="https://artefact.com/fr-fr/" target="_blank" rel="noopener">Artefact Paris&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://fr.linkedin.com/in/jeanne-sorin-7a6248137" target="_blank" rel="noopener">Jeanne Sorin&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://jeannesorin.github.io" target="_blank" rel="noopener">Jeanne Sorin&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/ChicagoCrime">Chicago&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
 &lt;td style="text-align:center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>, FE estimation with &lt;code>lfe&lt;/code>. Work on google VM.&lt;/td>
 &lt;td style="text-align:center">PhD U Chicago&lt;/td>
@@ -67,6 +67,24 @@
 &lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a>, &lt;a href="https://floswald.github.io/project/landuse">Landuse&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
 &lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Work on google VM with big data. Manual data collection from historical maps. Pulling historial US census data with &lt;a href="https://hrecht.github.io/censusapi/" target="_blank" rel="noopener">&lt;code>censusapi&lt;/code>&lt;/a>&lt;/td>
 &lt;td style="text-align:center">Bocconi PhD Econ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.linkedin.com/in/martin-bretschneider/?originalSubdomain=ch" target="_blank" rel="noopener">Martin Bretschneider&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Arduous hand collection and assemblance of custom built dataset on london bus garage ownership history&lt;/td>
+&lt;td style="text-align:center">USI Lugano PhD Econ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.linkedin.com/in/xinyu-dai-a100a915b/" target="_blank" rel="noopener">Xinyu Dai&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Highly complex data analysis tasks, nested logit estimation&lt;/td>
+&lt;td style="text-align:center">Brown PhD Econ&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://www.linkedin.com/in/ian-hsieh-5a98b4229/?originalSubdomain=tw" target="_blank" rel="noopener">Ian Hsieh&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
+&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Fantastic follow-up on Xinyu&amp;rsquo;s work, nested logit estimation in a very complex data setting&lt;/td>
+&lt;td style="text-align:center">Data Scientist&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Fertility, Housing Costs and City Growth</title><link>https://floswald.github.io/project/fertility/</link><pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate><guid>https://floswald.github.io/project/fertility/</guid><description>&lt;p>Developed economies moved from a baby boom to a baby bust, with very low fertility in large urban centers. We develop a spatial theory of demographic change and urban growth, whereby the housing market acts as an endogenous automatic stabilizer of fertility: high housing costs deter fertility while lower demographic growth mitigates future housing price increase. Our theory predicts rich dynamics of fertility and housing costs across space and time. The aging of baby boomers and their sorting across space triggers a later baby bust, more pronounced in larger cities, together with a long-lasting fertility and house price cycle that varies across locations. The predictions of the theoretical model with endogenous demographics and city growth are confronted to the data for French urban areas over the last decades.&lt;/p>
