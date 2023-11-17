@@ -35,6 +35,8 @@ url_pdf: "/pdf/london-buses.pdf"
 url_video: ""
 ---
 
+Joint with [Marleen Marra](https://www.marleenmarra.nl).
+
 ## Status
 
 ✅ Submitted.
