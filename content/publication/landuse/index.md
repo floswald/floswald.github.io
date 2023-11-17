@@ -38,4 +38,4 @@ url_video: ""
 
 ## Status
 
-Revise and Resubmit at *Review of Economic Studies* 💪
+Revised and Resubmitted at *Review of Economic Studies* February 2023.
