@@ -31,7 +31,7 @@ title: "Spatial Rents, Garage Location, and Competition in the London Bus Market
 #     url: "/pdf/landuse-appendixB.pdf"      
 # url_code: "https://floswald.github.io/LandUse.jl/"
 url_pdf: "/pdf/garage-locations-main.pdf"
-# url_slides: "/pdf/landuse-slides.pdf"
+url_slides: "/pdf/buses-slides.pdf"
 url_video: ""
 ---
 
