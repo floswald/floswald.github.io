@@ -9,7 +9,7 @@ authors:
 categories: []
 date: "2024-01-25"
 draft: false
-publication: NEW VERSION!!
+publication: CEPR Working Paper
 
 publication_types: ["3"]
 
