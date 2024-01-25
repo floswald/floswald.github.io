@@ -38,4 +38,4 @@ url_video: ""
 
 ## Status
 
-Revised and Resubmitted at *Review of Economic Studies* February 2023.
+Second round R&R at REStud (January 2024).
