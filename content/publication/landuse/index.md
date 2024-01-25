@@ -7,7 +7,7 @@ authors:
 - Marc Teignier
 - Florian Oswald
 categories: []
-date: "2023-02-06"
+date: "2024-01-25"
 draft: false
 publication: NEW VERSION!!
 
@@ -23,7 +23,7 @@ tags:
 - econ
 - research
 - wip
-title: Structural Change, Landuse and Urban Expansion (R&R @ REStud)
+title: Structural Change, Landuse and Urban Expansion (2nd round R&R @ REStud)
 
 links:
   - name: Appendix A
