@@ -22,7 +22,7 @@ tags:
 - econ
 - research
 - wip
-title: "Ownership Frictions in a Procurement Market: Evidence from London Buses"
+title: "Ownership Frictions in a Procurement Market: Evidence from London Buses (R&R @ IJIO)"
 
 # links:
 #   - name: Appendix A
@@ -40,3 +40,4 @@ Joint with [Marleen Marra](https://www.marleenmarra.nl).
 ## Status
 
 ✅ Submitted.
+✅ Revise and Resubmit at IJIO.
