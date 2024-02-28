@@ -59,7 +59,7 @@ Clear and simple communication is key, in normal times and much more so in onlin
 
 In general, these are exciting times to try out new environments for teaching, and everything that makes teaching (and learning) more fun and enjoyable should be an option. In November 2020, for example, we used the custom-built [gather.town](https://www.gather.town/) model of the department of economics at SciencesPo in order to do group work in the econometrics course. Students choose different virtual "rooms" to sit in (they have to walk around on screen in a very simple 2D setting), and then talk to each other in a video-conference. We found it works very well for group work.
 
-{{< tweet user="FlorianOswald" id="1328660455070511107" >}}
+{{< tweet 1328660455070511107 >}}
 
 
 
@@ -121,7 +121,7 @@ My [Computational Economics course](https://floswald.github.io/NumericalMethods/
 
 In spring 2021 I taught the course as part of the CIVICA pan-european PhD network, with a great group of students from across the continent. 👇
 
-{{< tweet user="FlorianOswald" id="1352380924479086599" >}}
+{{< tweet 1352380924479086599 >}}
 
 ### Testimonials
 
