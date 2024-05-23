@@ -22,7 +22,7 @@ tags:
 - econ
 - research
 - wip
-title: "Ownership Frictions in a Procurement Market: Evidence from London Buses (Conditionally Accepted @ IJIO)"
+title: "Ownership Frictions in a Procurement Market: Evidence from London Buses"
 
 # links:
 #   - name: Appendix A
