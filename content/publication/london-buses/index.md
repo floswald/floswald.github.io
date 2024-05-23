@@ -8,9 +8,9 @@ authors:
 categories: []
 date: "2023-02-06"
 draft: false
-publication: SciencesPo Working Paper
+publication: IJIO Accepted
 
-publication_types: ["3"]
+publication_types: ["2"]
 
 
 
@@ -39,6 +39,4 @@ Joint with [Marleen Marra](https://www.marleenmarra.nl).
 
 ## Status
 
-✅ Submitted.
-✅ Revise and Resubmit at IJIO.
-✅ Conditionally Accepted at IJIO.
+✅ Accepted at IJIO.
