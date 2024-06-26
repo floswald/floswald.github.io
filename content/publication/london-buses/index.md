@@ -6,9 +6,9 @@ authors:
 - Marleen Marra
 - Florian Oswald
 categories: []
-date: "2023-02-06"
+date: "2024-02-06"
 draft: false
-publication: IJIO Accepted
+publication: "*IJIO*"
 
 publication_types: ["2"]
 
@@ -31,7 +31,7 @@ title: "Ownership Frictions in a Procurement Market: Evidence from London Buses"
 #     url: "/pdf/landuse-appendixB.pdf"      
 # url_code: "https://floswald.github.io/LandUse.jl/"
 url_pdf: "/pdf/london-buses.pdf"
-# url_slides: "/pdf/landuse-slides.pdf"
+# url_slides: "/pdf/buses-slides.pdf"
 url_video: ""
 ---
 
@@ -39,4 +39,4 @@ Joint with [Marleen Marra](https://www.marleenmarra.nl).
 
 ## Status
 
-✅ Accepted at IJIO.
+✅ Forthcoming at IJIO.
