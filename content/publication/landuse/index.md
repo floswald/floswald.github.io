@@ -23,7 +23,7 @@ tags:
 - econ
 - research
 - wip
-title: Structural Change, Landuse and Urban Expansion (2nd round R&R @ REStud)
+title: Structural Change, Landuse and Urban Expansion
 
 links:
   - name: Appendix A
@@ -38,4 +38,4 @@ url_video: ""
 
 ## Status
 
-Second round R&R at REStud (January 2024).
+conditionally accepted @ REStud.
