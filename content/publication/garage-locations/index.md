@@ -22,7 +22,7 @@ tags:
 - econ
 - research
 - wip
-title: "Spatial Rents, Garage Location, and Competition in the London Bus Market "
+title: "Spatial Rents, Garage Location, and Competition in the London Bus Market"
 
 # links:
 #   - name: Appendix A
