@@ -29,7 +29,9 @@ links:
   - name: Appendix A
     url: "/pdf/landuse-appendixA.pdf"
   - name: Appendix B
-    url: "/pdf/landuse-appendixB.pdf"      
+    url: "/pdf/landuse-appendixB.pdf" 
+  - name: Short Slides
+    url: "/pdf/landuse-slides-short.pdf"     
 # url_code: "https://floswald.github.io/LandUse.jl/"
 url_pdf: "/pdf/landuse-paper.pdf"
 url_slides: "/pdf/landuse-slides.pdf"
