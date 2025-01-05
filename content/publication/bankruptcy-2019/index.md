@@ -6,21 +6,21 @@ authors:
 - Costas Meghir
 - Wenli Li
 - Florian Oswald
-date: '2022-03-19'
+date: '2025-01-03'
 header: {}
 highlight: false
 image_preview: ''
 math: false
 projects: []
-publication: working paper
-publication_short: working paper
+publication: International Economic Review
+publication_short: IER
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ["3"]
+publication_types: ["2"]
 selected: true
-title: Consumer Bankrupcty, Mortgage Default and Labor Supply (R&R @ IER)
+title: Consumer Bankrupcty, Mortgage Default and Labor Supply (accepted)
 url_code: ''
 url_dataset: ''
 url_pdf: /pdf/bankruptcy.pdf
