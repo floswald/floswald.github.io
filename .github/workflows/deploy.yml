@@ -1,7 +1,7 @@
 name: Deploy GitHub Pages
 
 env:
-  WC_HUGO_VERSION: '0.120.4'
+  WC_HUGO_VERSION: 'latest'
 
 on:
   push:
