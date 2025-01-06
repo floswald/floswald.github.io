@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>research | Florian Oswald</title><link>https://floswald.github.io/tag/research/</link><atom:link href="https://floswald.github.io/tag/research/index.xml" rel="self" type="application/rss+xml"/><description>research</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Tue, 06 Feb 2024 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url><title>research</title><link>https://floswald.github.io/tag/research/</link></image><item><title>Ownership Frictions in a Procurement Market: Evidence from London Buses</title><link>https://floswald.github.io/publication/london-buses/</link><pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate><guid>https://floswald.github.io/publication/london-buses/</guid><description>&lt;p>Joint with &lt;a href="https://www.marleenmarra.nl" target="_blank" rel="noopener">Marleen Marra&lt;/a>.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research | Florian Oswald</title><link>https://floswald.github.io/tag/research/</link><atom:link href="https://floswald.github.io/tag/research/index.xml" rel="self" type="application/rss+xml"/><description>Research</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Tue, 06 Feb 2024 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu10226378635250344412.png</url><title>Research</title><link>https://floswald.github.io/tag/research/</link></image><item><title>Ownership Frictions in a Procurement Market: Evidence from London Buses</title><link>https://floswald.github.io/publication/london-buses/</link><pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate><guid>https://floswald.github.io/publication/london-buses/</guid><description>&lt;p>Joint with &lt;a href="https://www.marleenmarra.nl" target="_blank" rel="noopener">Marleen Marra&lt;/a>.&lt;/p>
 &lt;h2 id="status">Status&lt;/h2>
 &lt;p>✅ Forthcoming at IJIO.&lt;/p></description></item><item><title>Structural Change, Landuse and Urban Expansion</title><link>https://floswald.github.io/publication/landuse/</link><pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate><guid>https://floswald.github.io/publication/landuse/</guid><description>&lt;h2 id="status">Status&lt;/h2>
 &lt;p>conditionally accepted @ REStud.&lt;/p></description></item><item><title>Invisible Ties, Internal Flights: the Influence of Non-cohabiting Family on Migration Decisions</title><link>https://floswald.github.io/project/familymigration/</link><pubDate>Thu, 16 Nov 2023 18:17:15 +0100</pubDate><guid>https://floswald.github.io/project/familymigration/</guid><description>&lt;p>Every year, about 1 in 20 Americans move across cities. Extensive research has highlighted relevant frictions in geographic mobility, indicating constraints on individuals&amp;rsquo; ability to maximize professional, educational, or investment opportunities. While many migration decisions are driven by financial incentives, a notable proportion are influenced by family-related reasons. Crucially, some beneficial relocations might not occur due to preferences for staying close to relatives. Thus, family structures can either impede mobility, by adding to the costs of moving, or boost gross migration flows, as people relocate to be nearer to extended family members. Our paper is the first to estimate the value of living close to non-cohabiting family members — including parents, adult children, and siblings — and to discuss how much of the reluctance to move can be attributed to such preferences. Our analysis hinges on two primary data sources: the Panel Study of Income Dynamics (PSID), which tracks extended families and records their labor history, wealth, and expenditures, and confidential IRS tax data with intergenerational family linkages, providing a nationally representative longitudinal dataset. We empirically document that familial motives play a pivotal role in understanding frictions in geographic mobility and in decoding migration behaviors. Subsequently, we employ a detailed structural model to ascertain the familial component of moving expenses, which we find to be substantial. Furthermore, our findings indicate that alongside shifts in the geographical spread of job opportunities, alterations in family structures significantly contribute to the secular decline in migration trends.&lt;/p></description></item><item><title>Spatial Rents, Garage Location, and Competition in the London Bus Market</title><link>https://floswald.github.io/publication/garage-locations/</link><pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate><guid>https://floswald.github.io/publication/garage-locations/</guid><description>&lt;p>Joint with &lt;a href="https://www.marleenmarra.nl" target="_blank" rel="noopener">Marleen Marra&lt;/a>.&lt;/p>
@@ -17,52 +17,52 @@
 &lt;tr>
 &lt;th>Name&lt;/th>
 &lt;th>Project/Tools&lt;/th>
-&lt;th style="text-align:center">Tasks&lt;/th>
-&lt;th style="text-align:center">Now at&lt;/th>
+&lt;th style="text-align: center">Tasks&lt;/th>
+&lt;th style="text-align: center">Now at&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td>&lt;a href="https://hugolhuillier.github.io" target="_blank" rel="noopener">Hugo L&amp;rsquo;Huillier&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a> / &lt;code>julia, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">Numerical solution of complex nonlinear model with julia, &lt;code>Plots.jl&lt;/code> graphics&lt;/td>
-&lt;td style="text-align:center">Princeton Econ PhD&lt;/td>
+&lt;td style="text-align: center">Numerical solution of complex nonlinear model with julia, &lt;code>Plots.jl&lt;/code> graphics&lt;/td>
+&lt;td style="text-align: center">Princeton Econ PhD&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://vviers.github.io/" target="_blank" rel="noopener">Vincent Viers&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/teaching/scpoeconometrics">ScPoEconometrics&lt;/a>, &lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/Airbnb">Airbnb&lt;/a> / &lt;code>R, postgreSQL, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Bash scripting on remote machines. Econometrics tutorials in &lt;code>Rmd&lt;/code>&lt;/td>
-&lt;td style="text-align:center">&lt;a href="https://artefact.com/fr-fr/" target="_blank" rel="noopener">Artefact Paris&lt;/a>&lt;/td>
+&lt;td style="text-align: center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Bash scripting on remote machines. Econometrics tutorials in &lt;code>Rmd&lt;/code>&lt;/td>
+&lt;td style="text-align: center">&lt;a href="https://artefact.com/fr-fr/" target="_blank" rel="noopener">Artefact Paris&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://jeannesorin.github.io" target="_blank" rel="noopener">Jeanne Sorin&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/ChicagoCrime">Chicago&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>, FE estimation with &lt;code>lfe&lt;/code>. Work on google VM.&lt;/td>
-&lt;td style="text-align:center">PhD U Chicago&lt;/td>
+&lt;td style="text-align: center">advanced data wrangling with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>, FE estimation with &lt;code>lfe&lt;/code>. Work on google VM.&lt;/td>
+&lt;td style="text-align: center">PhD U Chicago&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://twitter.com/alberto_nasi" target="_blank" rel="noopener">Alberto Nasi&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/project/ZTRAX">ZTRAX&lt;/a>, &lt;a href="https://floswald.github.io/project/fertility">Fertility&lt;/a>, &lt;a href="https://floswald.github.io/project/landuse">Landuse&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Work on google VM with big data. Manual data collection from historical maps. Pulling historial US census data with &lt;a href="https://hrecht.github.io/censusapi/" target="_blank" rel="noopener">&lt;code>censusapi&lt;/code>&lt;/a>&lt;/td>
-&lt;td style="text-align:center">Bocconi PhD Econ&lt;/td>
+&lt;td style="text-align: center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Work on google VM with big data. Manual data collection from historical maps. Pulling historial US census data with &lt;a href="https://hrecht.github.io/censusapi/" target="_blank" rel="noopener">&lt;code>censusapi&lt;/code>&lt;/a>&lt;/td>
+&lt;td style="text-align: center">Bocconi PhD Econ&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://www.linkedin.com/in/martin-bretschneider/?originalSubdomain=ch" target="_blank" rel="noopener">Martin Bretschneider&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Arduous hand collection and assemblance of custom built dataset on london bus garage ownership history&lt;/td>
-&lt;td style="text-align:center">USI Lugano PhD Econ&lt;/td>
+&lt;td style="text-align: center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Arduous hand collection and assemblance of custom built dataset on london bus garage ownership history&lt;/td>
+&lt;td style="text-align: center">USI Lugano PhD Econ&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://www.linkedin.com/in/xinyu-dai-a100a915b/" target="_blank" rel="noopener">Xinyu Dai&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Highly complex data analysis tasks, nested logit estimation&lt;/td>
-&lt;td style="text-align:center">Brown PhD Econ&lt;/td>
+&lt;td style="text-align: center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Highly complex data analysis tasks, nested logit estimation&lt;/td>
+&lt;td style="text-align: center">Brown PhD Econ&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>&lt;a href="https://www.linkedin.com/in/ian-hsieh-5a98b4229/?originalSubdomain=tw" target="_blank" rel="noopener">Ian Hsieh&lt;/a>&lt;/td>
 &lt;td>&lt;a href="https://floswald.github.io/publication/london-buses">London Buses&lt;/a>, &lt;a href="https://floswald.github.io/publication/garage-locations">Spatial Rents&lt;/a> / &lt;code>R, git&lt;/code>&lt;/td>
-&lt;td style="text-align:center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Fantastic follow-up on Xinyu&amp;rsquo;s work, nested logit estimation in a very complex data setting&lt;/td>
-&lt;td style="text-align:center">Data Scientist&lt;/td>
+&lt;td style="text-align: center">advanced data analytics with &lt;code>data.table&lt;/code>, &lt;code>dplyr&lt;/code>, spatial analytics with &lt;code>sf&lt;/code>. Fantastic follow-up on Xinyu&amp;rsquo;s work, nested logit estimation in a very complex data setting&lt;/td>
+&lt;td style="text-align: center">Data Scientist&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Fertility, Housing Costs and City Growth</title><link>https://floswald.github.io/project/fertility/</link><pubDate>Mon, 14 Jan 2019 23:15:01 +0100</pubDate><guid>https://floswald.github.io/project/fertility/</guid><description>&lt;p>Developed economies moved from a baby boom to a baby bust, with very low fertility in large urban centers. We develop a spatial theory of demographic change and urban growth, whereby the housing market acts as an endogenous automatic stabilizer of fertility: high housing costs deter fertility while lower demographic growth mitigates future housing price increase. Our theory predicts rich dynamics of fertility and housing costs across space and time. The aging of baby boomers and their sorting across space triggers a later baby bust, more pronounced in larger cities, together with a long-lasting fertility and house price cycle that varies across locations. The predictions of the theoretical model with endogenous demographics and city growth are confronted to the data for French urban areas over the last decades.&lt;/p>
