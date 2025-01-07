@@ -9,7 +9,7 @@ authors:
 categories: []
 date: "2024-01-25"
 draft: false
-publication: CEPR Working Paper
+publication: conditionally accepted @ REStud 
 
 publication_types: ["3"]
 
