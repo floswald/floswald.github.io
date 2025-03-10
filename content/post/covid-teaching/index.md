@@ -59,7 +59,7 @@ Clear and simple communication is key, in normal times and much more so in onlin
 
 In general, these are exciting times to try out new environments for teaching, and everything that makes teaching (and learning) more fun and enjoyable should be an option. In November 2020, for example, we used the custom-built [gather.town](https://www.gather.town/) model of the department of economics at SciencesPo in order to do group work in the econometrics course. Students choose different virtual "rooms" to sit in (they have to walk around on screen in a very simple 2D setting), and then talk to each other in a video-conference. We found it works very well for group work.
 
-{{< tweet user="FlorianOswald" id="1328660455070511107" >}}
+<!-- {{< tweet user="FlorianOswald" id="1328660455070511107" >}} -->
 
 
 
@@ -119,9 +119,9 @@ This course is the natural follow-up to what was taught in the intro part and in
 
 My [Computational Economics course](https://floswald.github.io/NumericalMethods/) is following the same philosophy as above, but for a more advanced audience. Motivated mostly by things I would have liked to know when I was a graduate student myself - and had to learn the hard way - the material has grown in a somewhat organic fashion. I try to cover the main tools needed to solve and estimate a modern economic model, so nonlinear optimization with constraints is a big part. As above, many aspects of how different algorithms work can be illustrated with a graphical device, and the new [Pluto.jl](https://github.com/fonsp/Pluto.jl) notebook format is an *excellent* teaching environment to create interactive experiences in a very simple way. We introduce the [`julia`](https://julialang.org/) language for technical computing, and treat applications and problems from a wide array of economics: marco applications (like the [Aiyagari Model](https://floswald.github.io/NumericalMethods/lecture7-dp4/)), or structural micro applications like [estimation of the Rust Bus Model](https://floswald.github.io/NumericalMethods/lecture10/) with different methods. Again, large part of the value added in my opinion is derived from the homeworks, also available on the [course website](https://floswald.github.io/NumericalMethods/). 
 
-In spring 2021 I taught the course as part of the CIVICA pan-european PhD network, with a great group of students from across the continent. 👇
+In spring 2021 I taught the course as part of the CIVICA pan-european PhD network, with a great group of students from across the continent.
 
-{{< tweet user="FlorianOswald" id="1352380924479086599" >}}
+<!-- {{< tweet user="FlorianOswald" id="1352380924479086599" >}} -->
 
 ### Testimonials
 

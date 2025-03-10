@@ -56,9 +56,9 @@ Clear and simple communication is key, in normal times and much more so in onlin
 
 {{< figure library="true" src="blog-slack.png" title="Figure 1: Slack Example" id="slack">}}
 
-In general, these are exciting times to try out new environments for teaching, and everything that makes teaching (and learning) more fun and enjoyable should be an option. In November 2020, for example, we used the custom-built [gather.town](https://www.gather.town/) model of the department of economics at SciencesPo in order to do group work in the econometrics course. Students choose different virtual "rooms" to sit in (they have to walk around on screen in a very simple 2D setting), and then talk to each other in a video-conference. We found it works very well for group work [(link to tweet)](https://twitter.com/FlorianOswald/status/1328660455070511107?s=20).
+In general, these are exciting times to try out new environments for teaching, and everything that makes teaching (and learning) more fun and enjoyable should be an option. In November 2020, for example, we used the custom-built [gather.town](https://www.gather.town/) model of the department of economics at SciencesPo in order to do group work in the econometrics course. Students choose different virtual "rooms" to sit in (they have to walk around on screen in a very simple 2D setting), and then talk to each other in a video-conference. We found it works very well for group work.
 
-{{< figure library="true" src="blog-tweet1.png" title="Figure 2: Gather Town of the Econ Department [(link to tweet)](https://twitter.com/FlorianOswald/status/1328660455070511107?s=20)" id="gather">}}
+<!-- {{< figure library="true" src="blog-tweet1.png" title="Figure 2: Gather Town of the Econ Department [(link to tweet)](https://twitter.com/FlorianOswald/status/1328660455070511107?s=20)" id="gather">}} -->
 
 
 
