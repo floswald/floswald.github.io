@@ -12,6 +12,8 @@ role: Associate Professor of Economics
 organizations:
 - name: University of Turin ESOMAS
   url: https://www.esomas-en.unito.it/do/home.pl
+- name: Collegio Carlo Alberto
+  url: https://www.carloalberto.org
 - name: SciencesPo Paris (on leave)
   url: https://www.sciencespo.fr/department-economics/
 
@@ -39,7 +41,7 @@ education:
 social:
 - icon: envelope
   icon_pack: fas
-  link: 'mailto:florian.oswald@sciencespo.fr'
+  link: 'mailto:florian.oswald@unito.it'
 - icon: x
   icon_pack: fab
   link: https://x.com/FlorianOswald
@@ -67,7 +69,7 @@ email: ""
 highlight_name: false
 ---
 
-I am an Associate Professor of Economics in the [ESOMAS](https://www.esomas-en.unito.it/do/home.pl) department of the University of Turin. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computational methods.
+I am an Associate Professor of Economics in the [ESOMAS](https://www.esomas-en.unito.it/do/home.pl) department of the University of Turin and a [Collegio Carlo Alberto](https://www.carloalberto.org) Affiliate. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computational methods.
 I am the [Data Editor](https://ejdataeditor.github.io/) for [The Economic Journal](https://res.org.uk/journals/the-economic-journal/) and for the [The Econometrics Journal](https://res.org.uk/journals/the-econometrics-journal/).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "tex/floswald.pdf" "newtab" >}}CV{{< /staticref >}}.
