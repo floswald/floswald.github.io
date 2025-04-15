@@ -20,12 +20,12 @@ publication_short: IER
 # 7 = Thesis; 8 = Patent
 publication_types: ["2"]
 selected: true
-title: Consumer Bankrupcty, Mortgage Default and Labor Supply (accepted)
-url_code: ''
+title: Consumer Bankrupcty, Mortgage Default and Labor Supply
+url_code: 'https://zenodo.org/records/15065004'
 url_dataset: ''
-url_pdf: /pdf/bankruptcy.pdf
+url_pdf: 'https://onlinelibrary.wiley.com/doi/10.1111/iere.12771'
 url_poster: ''
-url_preprint: 'https://cepr.org/active/publications/discussion_papers/dp.php?dpno=17117'
+url_preprint: 
 url_project: ''
 url_slides: ''
 url_source: ''

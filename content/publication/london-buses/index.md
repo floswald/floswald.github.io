@@ -8,7 +8,7 @@ authors:
 categories: []
 date: "2024-02-06"
 draft: false
-publication: "*IJIO*"
+publication: "IJIO"
 
 publication_types: ["2"]
 
@@ -30,7 +30,7 @@ title: "Ownership Frictions in a Procurement Market: Evidence from London Buses"
 #   - name: Appendix B
 #     url: "/pdf/landuse-appendixB.pdf"      
 # url_code: "https://floswald.github.io/LandUse.jl/"
-url_pdf: "/pdf/london-buses.pdf"
+url_pdf: "https://doi.org/10.1016/j.ijindorg.2024.103080"
 # url_slides: "/pdf/buses-slides.pdf"
 url_video: ""
 ---
@@ -39,4 +39,4 @@ Joint with [Marleen Marra](https://www.marleenmarra.nl).
 
 ## Status
 
-✅ Forthcoming at IJIO.
+✅ published  at IJIO.

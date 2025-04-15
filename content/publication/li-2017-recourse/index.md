@@ -16,7 +16,7 @@ authors:
 - Wenli Li
 - Florian Oswald
 date: 2017-01-01
-publication: '*Journal of Urban Economics*'
+publication: 'Journal of Urban Economics'
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;

@@ -42,7 +42,7 @@ title: "The Housing Stock, Housing Prices, and User Costs: The Roles of Location
 
 links:
   - name: IER
-    url: https://onlinelibrary.wiley.com/journal/14682354
+    url: https://doi.org/10.1111/iere.12475
   - name: Online Appendix
     url: /pdf/housing-stock-app.pdf
 
