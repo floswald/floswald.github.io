@@ -9,7 +9,7 @@ authors:
 categories: []
 date: "2024-01-25"
 draft: false
-publication: conditionally accepted @ REStud 
+publication: Accepted @ REStud 
 
 publication_types: ["3"]
 
@@ -40,4 +40,4 @@ url_video: ""
 
 ## Status
 
-conditionally accepted @ REStud.
+Accepted @ REStud.
