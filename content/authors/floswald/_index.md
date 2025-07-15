@@ -70,6 +70,7 @@ highlight_name: false
 ---
 
 I am an Associate Professor of Economics in the [ESOMAS](https://www.esomas-en.unito.it/do/home.pl) department of the University of Turin and a [Collegio Carlo Alberto](https://www.carloalberto.org) Affiliate. My work is in the fields of Urban, Macro and IO, and I am insterested in associated computational methods.
-I am the [Data Editor](https://ejdataeditor.github.io/) for [The Economic Journal](https://res.org.uk/journals/the-economic-journal/) and for the [The Econometrics Journal](https://res.org.uk/journals/the-econometrics-journal/).
+
+I am the the [JPE Data Editor](https://jpedataeditor.github.io/).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "tex/floswald.pdf" "newtab" >}}CV{{< /staticref >}}.
