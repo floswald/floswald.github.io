@@ -1,204 +1,204 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | Florian Oswald</title><link>https://floswald.github.io/slides/</link><atom:link href="https://floswald.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><item><title>Slides</title><link>https://floswald.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy">Create slides in Markdown with Wowchemy&lt;/h1>
-&lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
-&lt;hr>
-&lt;h2 id="features">Features&lt;/h2>
-&lt;ul>
-&lt;li>Efficiently write slides in Markdown&lt;/li>
-&lt;li>3-in-1: Create, Present, and Publish your slides&lt;/li>
-&lt;li>Supports speaker notes&lt;/li>
-&lt;li>Mobile friendly slides&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="controls">Controls&lt;/h2>
-&lt;ul>
-&lt;li>Next: &lt;code>Right Arrow&lt;/code> or &lt;code>Space&lt;/code>&lt;/li>
-&lt;li>Previous: &lt;code>Left Arrow&lt;/code>&lt;/li>
-&lt;li>Start: &lt;code>Home&lt;/code>&lt;/li>
-&lt;li>Finish: &lt;code>End&lt;/code>&lt;/li>
-&lt;li>Overview: &lt;code>Esc&lt;/code>&lt;/li>
-&lt;li>Speaker notes: &lt;code>S&lt;/code>&lt;/li>
-&lt;li>Fullscreen: &lt;code>F&lt;/code>&lt;/li>
-&lt;li>Zoom: &lt;code>Alt + Click&lt;/code>&lt;/li>
-&lt;li>&lt;a href="https://github.com/hakimel/reveal.js#pdf-export" target="_blank" rel="noopener">PDF Export&lt;/a>: &lt;code>E&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="code-highlighting">Code Highlighting&lt;/h2>
-&lt;p>Inline code: &lt;code>variable&lt;/code>&lt;/p>
-&lt;p>Code block:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">porridge&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">porridge&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Eating...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="math">Math&lt;/h2>
-&lt;p>In-line math: $x + y = z$&lt;/p>
-&lt;p>Block math:&lt;/p>
-&lt;p>$$
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Slides | Florian Oswald</title><link>https://floswald.github.io/slides/</link><atom:link href="https://floswald.github.io/slides/index.xml" rel="self" type="application/rss+xml"/><description>Slides</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Tue, 05 Feb 2019 00:00:00 +0000</lastBuildDate><item><title>Slides</title><link>https://floswald.github.io/slides/example/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/slides/example/</guid><description>&lt;h1 id="create-slides-in-markdown-with-wowchemy"&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener"&gt;Wowchemy&lt;/a&gt; | &lt;a href="https://owchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener"&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="features"&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="controls"&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/hakimel/reveal.js#pdf-export" target="_blank" rel="noopener"&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="code-highlighting"&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;porridge&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;porridge&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;blueberry&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;Eating...&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="math"&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
 f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p>
-&lt;hr>
-&lt;h2 id="fragments">Fragments&lt;/h2>
-&lt;p>Make content appear incrementally&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{{% fragment %}} One {{% /fragment %}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% fragment %}} **Two** {{% /fragment %}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% fragment %}} Three {{% /fragment %}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press &lt;code>Space&lt;/code> to play!&lt;/p>
-&lt;span class="fragment " >
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="fragments"&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{% fragment %}} One {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{% fragment %}} **Two** {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{% fragment %}} Three {{% /fragment %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;span class="fragment " &gt;
 One
-&lt;/span>
-&lt;span class="fragment " >
-&lt;strong>Two&lt;/strong>
-&lt;/span>
-&lt;span class="fragment " >
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
 Three
-&lt;/span>
-&lt;hr>
-&lt;p>A fragment can accept two optional parameters:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>class&lt;/code>: use a custom style (requires definition in custom CSS)&lt;/li>
-&lt;li>&lt;code>weight&lt;/code>: sets the order in which a fragment appears&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="speaker-notes">Speaker Notes&lt;/h2>
-&lt;p>Add speaker notes to your presentation&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{% speaker_note %}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Only the speaker can read these notes
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Press &lt;span class="sb">`S`&lt;/span> key to view
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% /speaker_note %}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press the &lt;code>S&lt;/code> key to view the speaker notes!&lt;/p>
-&lt;aside class="notes">
-&lt;ul>
-&lt;li>Only the speaker can read these notes&lt;/li>
-&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
-&lt;/ul>
-&lt;/aside>
-&lt;hr>
-&lt;h2 id="themes">Themes&lt;/h2>
-&lt;ul>
-&lt;li>black: Black background, white text, blue links (default)&lt;/li>
-&lt;li>white: White background, black text, blue links&lt;/li>
-&lt;li>league: Gray background, white text, blue links&lt;/li>
-&lt;li>beige: Beige background, dark text, brown links&lt;/li>
-&lt;li>sky: Blue background, thin dark text, blue links&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;ul>
-&lt;li>night: Black background, thick white text, orange links&lt;/li>
-&lt;li>serif: Cappuccino background, gray text, brown links&lt;/li>
-&lt;li>simple: White background, black text, blue links&lt;/li>
-&lt;li>solarized: Cream-colored background, dark green text, blue links&lt;/li>
-&lt;/ul>
-&lt;hr>
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="speaker-notes"&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{% speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; Only the speaker can read these notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;-&lt;/span&gt; Press &lt;span class="sb"&gt;`S`&lt;/span&gt; key to view
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{% /speaker_note %}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class="notes"&gt;
+&lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id="themes"&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;section data-noprocess data-shortcode-slide
 data-background-image="/media/boards.jpg"
->
-&lt;h2 id="custom-slide">Custom Slide&lt;/h2>
-&lt;p>Customize the slide style and background&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-image&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/media/boards.jpg&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-color&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="ni">#0000FF&lt;/span>&lt;span class="s">&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;my-style&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="custom-css-example">Custom CSS Example&lt;/h2>
-&lt;p>Let&amp;rsquo;s make headers navy colored.&lt;/p>
-&lt;p>Create &lt;code>assets/css/reveal_custom.css&lt;/code> with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h1&lt;/span>&lt;span class="o">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h2&lt;/span>&lt;span class="o">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h3&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">navy&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h1 id="questions">Questions?&lt;/h1>
-&lt;p>&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p></description></item><item><title>UEA Discussion</title><link>https://floswald.github.io/slides/uea/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/slides/uea/</guid><description>&lt;h2 id="do-appraiser-and-borrower-race-affect-valuation">Do Appraiser and Borrower Race Affect Valuation?&lt;/h2>
-&lt;br>
-&lt;ul>
-&lt;li>&lt;strong>Authors&lt;/strong>: Brent W. Ambrose, James N. Conklin, N. Edward Coulson, Moussa Diop, and Luis A. Lopez&lt;/li>
-&lt;li>&lt;strong>Discussant&lt;/strong>: Florian Oswald&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="intro">Intro&lt;/h3>
-&lt;ul>
-&lt;li>Property appraisers are trained to asses property values.&lt;/li>
-&lt;li>Large body of evidence going back to the 60s of discriminatory practices in mortgage markets - HMDA.&lt;/li>
-&lt;li>&lt;em>Extremely&lt;/em> relevant setting: In remortgaging setting, appraiser is the single agent determining the value of property (not market interactions) - Appraiser &lt;em>faces no competition&lt;/em>.&lt;/li>
-&lt;li>&lt;strong>This Paper&lt;/strong>: Is there racial bias in remortgaging appraisals?&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="approach">Approach&lt;/h3>
-&lt;ol>
-&lt;li>Use property level data on remortgage appraisals, where owner&amp;rsquo;s race is observed.&lt;/li>
-&lt;li>Infer the appraiser&amp;rsquo;s race from first and last name.&lt;/li>
-&lt;li>Compare appraisal to output of an industry model (Automatic Valuation Model, AVM).&lt;/li>
-&lt;li>Assess and interpret differences.&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h3 id="contribution">Contribution&lt;/h3>
-&lt;ul>
-&lt;li>Novel dataset and insights in a contentious area of debate.&lt;/li>
-&lt;li>First paper to be able to assess impact of appraiser&amp;rsquo;s race.&lt;/li>
-&lt;li>Found effect does &lt;em>not&lt;/em> disappear with race of appraiser.&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="comment-1-the-avm-model">Comment 1: The AVM Model&lt;/h3>
-&lt;ul>
-&lt;li>It would be good to know more about this &lt;em>black box&lt;/em> model.&lt;/li>
-&lt;li>We should know what variables it uses, at which geographic scale.&lt;/li>
-&lt;li>How well does it perform?&lt;/li>
-&lt;li>Outcome $Y_i$ is difference between appraiser and some estimate we don&amp;rsquo;t know much about. (We know it&amp;rsquo;s a &lt;em>moving target&lt;/em>.)&lt;/li>
-&lt;/ul>
-&lt;span class="fragment " >
-&lt;ul>
-&lt;li>🤔 Why do lenders send appraisers instead of relying on the model?&lt;/li>
-&lt;/ul>
-&lt;/span>
-&lt;hr>
-&lt;h3 id="comment-2-unobserved-quality">Comment 2: Unobserved Quality&lt;/h3>
-&lt;p>$$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_i +\omega_i + \epsilon_i$$&lt;/p>
-&lt;span class="fragment " >
-&lt;ul>
-&lt;li>$X$: property type, investment properties, multi-unit properties, condominiums, and PUDs&lt;/li>
-&lt;/ul>
-&lt;/span>
-&lt;span class="fragment " >
-&lt;ul>
-&lt;li>&lt;em>Unobserved House Quality&lt;/em> is potentially a big issue here.&lt;/li>
-&lt;li>Omitted variable bias could be severe. Notice that the appraiser FE does not deal with this.&lt;/li>
-&lt;li>If avg unobserved quality of group $g$ is relatively high, we will &lt;em>underestimate&lt;/em> discrimination, and vice versa.&lt;/li>
-&lt;/ul>
-&lt;/span>
-&lt;span class="fragment " >
-&lt;ul>
-&lt;li>Here are a few candidates:&lt;/li>
-&lt;/ul>
-&lt;/span>
-&lt;hr>
-&lt;h3 id="potentially-omitted-variables">Potentially Omitted Variables&lt;/h3>
-&lt;span class="fragment " >
-&lt;ol>
-&lt;li>Age of property. It may be that certain groups can afford only buildings of older vintage, which could imply a lower assessment.&lt;/li>
-&lt;/ol>
-&lt;/span>
-&lt;span class="fragment " >
-&lt;ol start="2">
-&lt;li>Investments in structure, maintainance and upkeep: Less affluent groups may find it harder to make timely investments (roof, heating, insulation&amp;hellip;), which in turn impact the appraisal.&lt;/li>
-&lt;/ol>
-&lt;/span>
-&lt;span class="fragment " >
-&lt;ol start="3">
-&lt;li>Investments in home improvement: Less affluent groups may find it harder to install winter garden or swimming pools, with the same effect on valuations.&lt;/li>
-&lt;/ol>
-&lt;/span>
-&lt;hr>
-&lt;h3 id="potential-solutions">Potential Solutions&lt;/h3>
-&lt;ul>
-&lt;li>A building-level fixed effect. &lt;a href="http://jmp-consider-the-slavs.tilda.ws/" target="_blank" rel="noopener">Vladimir Avetian&lt;/a> can use one in documenting (overt) discrimination in Moscow&amp;rsquo;s housing market. &lt;em>Probably hard here - unless you have a bunch of properties in a single unit?&lt;/em>&lt;/li>
-&lt;li>Get more data on the property to increase $X$? With current data seemingly impossible. What about ZTRAX, which has tons of characteristics (and First and Last name of Buyer and Seller), or something similar?&lt;/li>
-&lt;li>More info on borrowers? Controlling for income (wealth better) would be ideal - education?&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="conclusion">Conclusion&lt;/h3>
-&lt;ol>
-&lt;li>Very important topic.&lt;/li>
-&lt;li>Exciting database with appraisers race marker.&lt;/li>
-&lt;li>Getting better measures of quality and/or borrower characteristics would help.&lt;/li>
-&lt;/ol>
-&lt;p>Thanks!&lt;/p></description></item></channel></rss>
+&gt;
+&lt;h2 id="custom-slide"&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{&amp;lt; slide background-image=&amp;#34;/media/boards.jpg&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{&amp;lt; slide background-color=&amp;#34;&lt;span class="ni"&gt;#0000FF&lt;/span&gt;&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;{{&amp;lt; slide class=&amp;#34;my-style&amp;#34; &amp;gt;}}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="custom-css-example"&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-css" data-lang="css"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;reveal&lt;/span&gt; &lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;reveal&lt;/span&gt; &lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="nt"&gt;h2&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;reveal&lt;/span&gt; &lt;span class="nt"&gt;section&lt;/span&gt; &lt;span class="nt"&gt;h3&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;navy&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h1 id="questions"&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener"&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</description></item><item><title>UEA Discussion</title><link>https://floswald.github.io/slides/uea/</link><pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/slides/uea/</guid><description>&lt;h2 id="do-appraiser-and-borrower-race-affect-valuation"&gt;Do Appraiser and Borrower Race Affect Valuation?&lt;/h2&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Authors&lt;/strong&gt;: Brent W. Ambrose, James N. Conklin, N. Edward Coulson, Moussa Diop, and Luis A. Lopez&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discussant&lt;/strong&gt;: Florian Oswald&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="intro"&gt;Intro&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Property appraisers are trained to asses property values.&lt;/li&gt;
+&lt;li&gt;Large body of evidence going back to the 60s of discriminatory practices in mortgage markets - HMDA.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Extremely&lt;/em&gt; relevant setting: In remortgaging setting, appraiser is the single agent determining the value of property (not market interactions) - Appraiser &lt;em&gt;faces no competition&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;This Paper&lt;/strong&gt;: Is there racial bias in remortgaging appraisals?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="approach"&gt;Approach&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Use property level data on remortgage appraisals, where owner&amp;rsquo;s race is observed.&lt;/li&gt;
+&lt;li&gt;Infer the appraiser&amp;rsquo;s race from first and last name.&lt;/li&gt;
+&lt;li&gt;Compare appraisal to output of an industry model (Automatic Valuation Model, AVM).&lt;/li&gt;
+&lt;li&gt;Assess and interpret differences.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id="contribution"&gt;Contribution&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Novel dataset and insights in a contentious area of debate.&lt;/li&gt;
+&lt;li&gt;First paper to be able to assess impact of appraiser&amp;rsquo;s race.&lt;/li&gt;
+&lt;li&gt;Found effect does &lt;em&gt;not&lt;/em&gt; disappear with race of appraiser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="comment-1-the-avm-model"&gt;Comment 1: The AVM Model&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;It would be good to know more about this &lt;em&gt;black box&lt;/em&gt; model.&lt;/li&gt;
+&lt;li&gt;We should know what variables it uses, at which geographic scale.&lt;/li&gt;
+&lt;li&gt;How well does it perform?&lt;/li&gt;
+&lt;li&gt;Outcome $Y_i$ is difference between appraiser and some estimate we don&amp;rsquo;t know much about. (We know it&amp;rsquo;s a &lt;em&gt;moving target&lt;/em&gt;.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span class="fragment " &gt;
+&lt;ul&gt;
+&lt;li&gt;🤔 Why do lenders send appraisers instead of relying on the model?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h3 id="comment-2-unobserved-quality"&gt;Comment 2: Unobserved Quality&lt;/h3&gt;
+&lt;p&gt;$$Y_i = \delta_1 A_i + \delta_2 B_i + \delta_3 H_i + X_i \beta + \xi_i +\lambda_i +\omega_i + \epsilon_i$$&lt;/p&gt;
+&lt;span class="fragment " &gt;
+&lt;ul&gt;
+&lt;li&gt;$X$: property type, investment properties, multi-unit properties, condominiums, and PUDs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Unobserved House Quality&lt;/em&gt; is potentially a big issue here.&lt;/li&gt;
+&lt;li&gt;Omitted variable bias could be severe. Notice that the appraiser FE does not deal with this.&lt;/li&gt;
+&lt;li&gt;If avg unobserved quality of group $g$ is relatively high, we will &lt;em&gt;underestimate&lt;/em&gt; discrimination, and vice versa.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
+&lt;ul&gt;
+&lt;li&gt;Here are a few candidates:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h3 id="potentially-omitted-variables"&gt;Potentially Omitted Variables&lt;/h3&gt;
+&lt;span class="fragment " &gt;
+&lt;ol&gt;
+&lt;li&gt;Age of property. It may be that certain groups can afford only buildings of older vintage, which could imply a lower assessment.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
+&lt;ol start="2"&gt;
+&lt;li&gt;Investments in structure, maintainance and upkeep: Less affluent groups may find it harder to make timely investments (roof, heating, insulation&amp;hellip;), which in turn impact the appraisal.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/span&gt;
+&lt;span class="fragment " &gt;
+&lt;ol start="3"&gt;
+&lt;li&gt;Investments in home improvement: Less affluent groups may find it harder to install winter garden or swimming pools, with the same effect on valuations.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/span&gt;
+&lt;hr&gt;
+&lt;h3 id="potential-solutions"&gt;Potential Solutions&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A building-level fixed effect. &lt;a href="http://jmp-consider-the-slavs.tilda.ws/" target="_blank" rel="noopener"&gt;Vladimir Avetian&lt;/a&gt; can use one in documenting (overt) discrimination in Moscow&amp;rsquo;s housing market. &lt;em&gt;Probably hard here - unless you have a bunch of properties in a single unit?&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Get more data on the property to increase $X$? With current data seemingly impossible. What about ZTRAX, which has tons of characteristics (and First and Last name of Buyer and Seller), or something similar?&lt;/li&gt;
+&lt;li&gt;More info on borrowers? Controlling for income (wealth better) would be ideal - education?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Very important topic.&lt;/li&gt;
+&lt;li&gt;Exciting database with appraisers race marker.&lt;/li&gt;
+&lt;li&gt;Getting better measures of quality and/or borrower characteristics would help.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Thanks!&lt;/p&gt;</description></item></channel></rss>

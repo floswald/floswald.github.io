@@ -1,34 +1,166 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teaching | Florian Oswald</title><link>https://floswald.github.io/teaching/</link><atom:link href="https://floswald.github.io/teaching/index.xml" rel="self" type="application/rss+xml"/><description>Teaching</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Wed, 01 Feb 2023 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu_9d9b593248f3c06d.png</url><title>Teaching</title><link>https://floswald.github.io/teaching/</link></image><item><title>Intro to Programming M1</title><link>https://floswald.github.io/teaching/introprogramming/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://floswald.github.io/teaching/introprogramming/</guid><description>&lt;h2 id="course-website-and-material">Course Website and Material&lt;/h2>
-&lt;p>&lt;a href="https://floswald.github.io/ScPoProgramming/" target="_blank" rel="noopener">https://floswald.github.io/ScPoProgramming/&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>We teach this course to first year PhD students (Master 1).&lt;/li>
-&lt;/ul>
-&lt;h2 id="objectives">Objectives&lt;/h2>
-&lt;ol>
-&lt;li>After this course, we want you to be able to participate or conduct your own research project in an efficient way. Research nowadays means data sciencey stuff in most cases, certainly in Economics.&lt;/li>
-&lt;li>We want you to have a basic understanding of how an operating system (in particular, your OS) works.&lt;/li>
-&lt;li>We want to be able to achieve a basic level of automation in repetitive tasks.&lt;/li>
-&lt;li>We want you to know what Version Control is and how to use it in a research project.&lt;/li>
-&lt;li>We will introduce some (hopefully) useful &lt;code>R&lt;/code> and programming (and some &lt;code>julia&lt;/code> too!)&lt;/li>
-&lt;/ol></description></item><item><title>CompEcon</title><link>https://floswald.github.io/teaching/compecon/</link><pubDate>Sat, 12 Jan 2019 11:48:47 +0100</pubDate><guid>https://floswald.github.io/teaching/compecon/</guid><description>&lt;p>This is a graduate level course in Computational Economics. We cover a series of widely used computational techniques both in theory and in practice. The course relies on the &lt;a href="https://julialang.org" target="_blank" rel="noopener">julia&lt;/a> language for technical computing, and we use online material from &lt;a href="https://quantecon.org" target="_blank" rel="noopener">quantecon&lt;/a> extensively. Additional to this excellent material, the main value added from the course are the homeworks, which come with fully worked solutions!&lt;/p>
-&lt;h2 id="materials">Materials&lt;/h2>
-&lt;ul>
-&lt;li>The entire course material is on the website &lt;a href="https://floswald.github.io/NumericalMethods/" target="_blank" rel="noopener">Numerical Methods&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h3 id="gpu-computing-tutorial">GPU computing tutorial&lt;/h3>
-&lt;ul>
-&lt;li>Here is a tutorial on&lt;/li>
-&lt;/ul>
-&lt;p>&lt;a href="https://floswald.github.io/html/vfi.html" target="_blank">GPU computing with julia&lt;/a>
-.&lt;/p></description></item><item><title>Econometrics</title><link>https://floswald.github.io/teaching/scpoeconometrics/</link><pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate><guid>https://floswald.github.io/teaching/scpoeconometrics/</guid><description>&lt;p>This course aims to teach the basics of data analysis needed in a Social Sciences oriented University like SciencesPo. We purposefully start at a level that assumes no prior knowledge about statistics whatsoever. Our objective is to have our 2nd year undergraduates understand and be able to interpret linear regression analysis. We will not rely on maths and statistics, but practical learning in order to teach the main concepts.&lt;/p>
-&lt;p>The course is taught on several SciencesPo campuses. I am the main course architect and maintainer.&lt;/p>
-&lt;h2 id="materials">Materials&lt;/h2>
-&lt;ul>
-&lt;li>The online textbook is available &lt;a href="https://scpoecon.github.io/ScPoEconometrics/" target="_blank" rel="noopener">here.&lt;/a>&lt;/li>
-&lt;li>The associated &lt;code>R&lt;/code> package is &lt;a href="https://github.com/ScPoEcon/ScPoEconometrics" target="_blank" rel="noopener">on github.&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>GradLabor</title><link>https://floswald.github.io/teaching/gradlabor/</link><pubDate>Fri, 12 Jan 2018 12:06:37 +0100</pubDate><guid>https://floswald.github.io/teaching/gradlabor/</guid><description>&lt;p>This is a graduate level course in Labor Economics. The focus of the course are recent contributions concerning Earnings, Employment and Consumption. An important component of the course are practical exercises (&lt;em>labs&lt;/em>), and homeworks, that talk directly to the papers we discuss.&lt;/p>
-&lt;h2 id="material">Material&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="grad-labour-syllabus.pdf">Syllabus&lt;/a>&lt;/li>
-&lt;li>The course website is &lt;a href="https://floswald.github.io/ScPo-Labor/" target="_blank" rel="noopener">available here&lt;/a>.&lt;/li>
-&lt;/ul></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teaching | Florian Oswald</title><link>https://floswald.github.io/teaching/</link><atom:link href="https://floswald.github.io/teaching/index.xml" rel="self" type="application/rss+xml"/><description>Teaching</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><copyright>© 2022 Florian Oswald</copyright><lastBuildDate>Fri, 26 Sep 2025 00:00:00 +0000</lastBuildDate><image><url>https://floswald.github.io/media/icon_hu_9d9b593248f3c06d.png</url><title>Teaching</title><link>https://floswald.github.io/teaching/</link></image><item><title>Econometrics ESOMAS</title><link>https://floswald.github.io/teaching/econometrics/</link><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><guid>https://floswald.github.io/teaching/econometrics/</guid><description>&lt;p&gt;This course aims to teach the basics of data analysis and Econometrics.&lt;/p&gt;
+&lt;h2 id="materials"&gt;Materials&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The slides are &lt;a href="https://github.com/floswald/Econometrics-slides/" target="_blank" rel="noopener"&gt;https://github.com/floswald/Econometrics-slides/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The associated &lt;code&gt;R&lt;/code&gt; package is &lt;a href="https://github.com/floswald/EconometricsApps" target="_blank" rel="noopener"&gt;on github.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="schedule"&gt;Schedule&lt;/h2&gt;
+&lt;p&gt;A typical week will look as follows:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Day&lt;/th&gt;
+&lt;th style="text-align: left"&gt;Time&lt;/th&gt;
+&lt;th&gt;Location&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Tuesday&lt;/td&gt;
+&lt;td style="text-align: left"&gt;14:00 - 15:30&lt;/td&gt;
+&lt;td&gt;Aula Magna SME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Wednesday&lt;/td&gt;
+&lt;td style="text-align: left"&gt;11:15-12:30&lt;/td&gt;
+&lt;td&gt;Aula 3 SME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;12:45-13:45&lt;/td&gt;
+&lt;td&gt;Aula 3 SME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Friday&lt;/td&gt;
+&lt;td style="text-align: left"&gt;11:15-12:30&lt;/td&gt;
+&lt;td&gt;Aula Azzurra SME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style="text-align: left"&gt;12:45-13:45&lt;/td&gt;
+&lt;td&gt;Aula Azzurra SME&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;SME: Scuola di Management e Economia, Corso Unione Sovietica 218 bis, Torino&lt;/p&gt;
+&lt;h2 id="slide-index"&gt;Slide Index&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Lecture&lt;/th&gt;
+&lt;th style="text-align: center"&gt;HTML&lt;/th&gt;
+&lt;th style="text-align: center"&gt;PDF&lt;/th&gt;
+&lt;th&gt;Tasks&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 1: Introduction&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_intro/chapter_intro.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_intro/chapter_intro.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_intro/tasks/intro_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_intro/tasks/intro_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lectures 2: Probability and Summarising Data&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_probability/chapter_probability.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_probability/chapter_probability.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_probability/tasks/probability_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_probability/tasks/probability_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lectures 3: Tidying and Visualising Data&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_tidy/chapter_tidy.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_tidy/chapter_tidy.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_tidy/tasks/tidy_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_tidy/tasks/tidy_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 4: Simple Linear Regression&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_slr/chapter_slr.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_slr/chapter_slr.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_slr/tasks/slr_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_slr/tasks/slr_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 5: Introduction to Causality&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_causality/chapter_causality.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_causality/chapter_causality.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_causality/tasks/causality_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_causality/tasks/causality_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 6: Multiple Linear Regression&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_mlr/chapter_mlr.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_mlr/chapter_mlr.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_mlr/tasks/mlr_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_mlr/tasks/mlr_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 7: Linear Regression Extensions&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_regext/chapter_regext.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_regext/chapter_regext.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_regext/tasks/regext_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_regext/tasks/regext_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 8: Sampling&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_sampling/chapter_sampling.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_sampling/chapter_sampling.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_sampling/tasks/sampling_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_sampling/tasks/sampling_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 9: Confidence Intervals and Hypothesis Testing&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_ci_hyptest/chapter_ci_hyptest.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_ci_hyptest/chapter_ci_hyptest.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=""&gt;HTML&lt;/a&gt; &lt;a href=""&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 10: Regression Inference&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_reginference/reg_inference.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter_reginference/reg_inference.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_reginference/tasks/reginference_tasks.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt; &lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter_reginference/tasks/reginference_tasks.Rmd" target="_blank" rel="noopener"&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 11: Panel Data&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=""&gt;HTML&lt;/a&gt; &lt;a href=""&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 12: Instrumental Variables&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=""&gt;HTML&lt;/a&gt; &lt;a href=""&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 13: Discrete Choice&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=""&gt;HTML&lt;/a&gt; &lt;a href=""&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lecture 14: Regression Discontinuity&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://raw.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.html" target="_blank" rel="noopener"&gt;HTML&lt;/a&gt;&lt;/td&gt;
+&lt;td style="text-align: center"&gt;&lt;a href="https://rawcdn.githack.com/floswald/Econometrics-Slides/master/chapter-RDD/RDD.pdf" target="_blank" rel="noopener"&gt;PDF&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=""&gt;HTML&lt;/a&gt; &lt;a href=""&gt;.Rmd&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Intro to Programming Master ESOMAS</title><link>https://floswald.github.io/teaching/introprogramming/</link><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><guid>https://floswald.github.io/teaching/introprogramming/</guid><description>&lt;h2 id="course-website-and-material"&gt;Course Website and Material&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://floswald.github.io/IntroProgramming/" target="_blank" rel="noopener"&gt;https://floswald.github.io/IntroProgramming/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="objectives"&gt;Objectives&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;After this course, we want you to be able to participate or conduct your own research project in an efficient way. Research nowadays means data sciencey stuff in most cases, certainly in Economics.&lt;/li&gt;
+&lt;li&gt;We want you to have a basic understanding of how an operating system (in particular, your OS) works.&lt;/li&gt;
+&lt;li&gt;We want to be able to achieve a basic level of automation in repetitive tasks.&lt;/li&gt;
+&lt;li&gt;We want you to know what Version Control is and how to use it in a research project.&lt;/li&gt;
+&lt;li&gt;We will introduce some (hopefully) useful &lt;code&gt;R&lt;/code&gt; and programming (and some &lt;code&gt;julia&lt;/code&gt; too!)&lt;/li&gt;
+&lt;/ol&gt;</description></item><item><title>CompEcon CCA</title><link>https://floswald.github.io/teaching/compecon/</link><pubDate>Sat, 12 Jan 2019 11:48:47 +0100</pubDate><guid>https://floswald.github.io/teaching/compecon/</guid><description>&lt;p&gt;This is a graduate level course in Computational Economics. We cover a series of widely used computational techniques both in theory and in practice. The course relies on the &lt;a href="https://julialang.org" target="_blank" rel="noopener"&gt;julia&lt;/a&gt; language for technical computing, and we use online material from &lt;a href="https://quantecon.org" target="_blank" rel="noopener"&gt;quantecon&lt;/a&gt; extensively. Additional to this excellent material, the main value added from the course are the homeworks, which come with fully worked solutions!&lt;/p&gt;
+&lt;h2 id="materials"&gt;Materials&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;The entire course material is on the website &lt;a href="https://floswald.github.io/CompEcon/" target="_blank" rel="noopener"&gt;Numerical Methods&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="gpu-computing-tutorial"&gt;GPU computing tutorial&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Here is a tutorial on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="https://floswald.github.io/html/vfi.html" target="_blank"&gt;GPU computing with julia&lt;/a&gt;
+.&lt;/p&gt;</description></item><item><title>GradLabor (ScPo)</title><link>https://floswald.github.io/teaching/gradlabor/</link><pubDate>Fri, 12 Jan 2018 12:06:37 +0100</pubDate><guid>https://floswald.github.io/teaching/gradlabor/</guid><description>&lt;p&gt;This is a graduate level course in Labor Economics. The focus of the course are recent contributions concerning Earnings, Employment and Consumption. An important component of the course are practical exercises (&lt;em&gt;labs&lt;/em&gt;), and homeworks, that talk directly to the papers we discuss.&lt;/p&gt;
+&lt;h2 id="material"&gt;Material&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="grad-labour-syllabus.pdf"&gt;Syllabus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The course website is &lt;a href="https://floswald.github.io/ScPo-Labor/" target="_blank" rel="noopener"&gt;available here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
