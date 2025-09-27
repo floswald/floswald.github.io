@@ -8,7 +8,7 @@ image:
 summary: Graduate Labor Economics
 tags:
 - teaching
-title: GradLabor
+title: GradLabor (ScPo)
 ---
 This is a graduate level course in Labor Economics. The focus of the course are recent contributions concerning Earnings, Employment and Consumption. An important component of the course are practical exercises (*labs*), and homeworks, that talk directly to the papers we discuss.
 

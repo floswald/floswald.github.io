@@ -1,21 +1,20 @@
 ---
 categories: []
-date: 2023-02-01
+date: 2025-09-26
 draft: false
-summary: Intro to Programming M1
+summary: Intro to Programming
 image:
   caption: Real Programming Languages solve Real Problems
   focal_point: Left
 tags:
 - teaching
-title: Intro to Programming M1
+title: Intro to Programming Master ESOMAS
 ---
 
 ## Course Website and Material
 
-[https://floswald.github.io/ScPoProgramming/](https://floswald.github.io/ScPoProgramming/)
+[https://floswald.github.io/IntroProgramming/](https://floswald.github.io/IntroProgramming/)
 
-* We teach this course to first year PhD students (Master 1).
 
 
 ## Objectives

@@ -8,13 +8,13 @@ image:
 summary: PhD Computational Economics
 tags:
 - teaching
-title: CompEcon
+title: CompEcon CCA
 ---
 This is a graduate level course in Computational Economics. We cover a series of widely used computational techniques both in theory and in practice. The course relies on the [julia](https://julialang.org) language for technical computing, and we use online material from [quantecon](https://quantecon.org) extensively. Additional to this excellent material, the main value added from the course are the homeworks, which come with fully worked solutions!
 
 ## Materials
 
-* The entire course material is on the website [Numerical Methods](https://floswald.github.io/NumericalMethods/)
+* The entire course material is on the website [Numerical Methods](https://floswald.github.io/CompEcon/)
 
 ### GPU computing tutorial
 
