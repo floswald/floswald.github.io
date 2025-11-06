@@ -7,11 +7,11 @@ authors:
 - Marc Teignier
 - Florian Oswald
 categories: []
-date: "2024-01-25"
+date: "2025-10-01"
 draft: false
-publication: Accepted @ REStud 
+publication: REStud 
 
-publication_types: ["3"]
+publication_types: ["2"]
 
 
 
@@ -37,7 +37,3 @@ url_pdf: "/pdf/landuse-paper.pdf"
 url_slides: "/pdf/landuse-slides.pdf"
 url_video: ""
 ---
-
-## Status
-
-Accepted @ REStud.
