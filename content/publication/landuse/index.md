@@ -9,7 +9,9 @@ authors:
 categories: []
 date: "2025-10-01"
 draft: false
-publication: REStud 
+publication: Review of Economic Studies
+publication_short: REStud
+
 
 publication_types: ["2"]
 
@@ -22,7 +24,6 @@ image:
 tags:
 - econ
 - research
-- wip
 title: Structural Change, Landuse and Urban Expansion
 
 links:
@@ -30,8 +31,8 @@ links:
     url: "/pdf/landuse-appendixA.pdf"
   - name: Appendix B
     url: "/pdf/landuse-appendixB.pdf" 
-  - name: Short Slides
-    url: "/pdf/landuse-slides-short.pdf"     
+  - name: Replication package
+    url: "https://zenodo.org/records/15814459"     
 # url_code: "https://floswald.github.io/LandUse.jl/"
 url_pdf: "/pdf/landuse-paper.pdf"
 url_slides: "/pdf/landuse-slides.pdf"
