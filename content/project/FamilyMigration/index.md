@@ -23,9 +23,9 @@ image:
 #   Uncomment and edit lines below to show custom links.
 # links:
 # - name: Follow
-#   url: https://twitter.com
+#   url: https://x.com
 #   icon_pack: fab
-#   icon: twitter
+#   icon: x
 
 url_code: ""
 url_pdf: ""
