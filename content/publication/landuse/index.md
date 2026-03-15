@@ -31,6 +31,8 @@ links:
     url: "/pdf/landuse-appendixA.pdf"
   - name: Appendix B
     url: "/pdf/landuse-appendixB.pdf" 
+  - name: Appendix C
+    url: "/pdf/landuse-appendixC.pdf" 
   - name: Replication package
     url: "https://zenodo.org/records/15814459"     
 # url_code: "https://floswald.github.io/LandUse.jl/"
