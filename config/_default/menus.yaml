@@ -45,6 +45,10 @@ main:
     url: '#posts'
     weight: 4
     parent: 'misc'
+  - name: Discussios
+    url: 'discussions'
+    weight: 5
+    parent: 'misc'
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
