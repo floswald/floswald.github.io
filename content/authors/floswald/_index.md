@@ -14,8 +14,6 @@ organizations:
   url: https://www.esomas-en.unito.it/do/home.pl
 - name: Collegio Carlo Alberto
   url: https://www.carloalberto.org
-- name: SciencesPo Paris (on leave)
-  url: https://www.sciencespo.fr/department-economics/
 
 # Short bio (displayed in user profile at end of posts)
 bio: I'm interested in Urban/Macro/Labour/IO and computational methods
